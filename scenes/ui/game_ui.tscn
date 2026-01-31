@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://hpjlbxfev3io" path="res://assets/sprites/masks/Mask_accessories/asset_mask_accessories_goateye_yellow.png" id="4_qrkc0"]
 [ext_resource type="Script" uid="uid://bu0cj2eyjrvn4" path="res://ressources/mask_element_param.gd" id="4_v1bdg"]
 [ext_resource type="Texture2D" uid="uid://vtursprimdlv" path="res://assets/sprites/masks/Mask_accessories/asset_mask_accessories_eye_only.png" id="5_yvtb5"]
+[ext_resource type="Script" uid="uid://dpc8w6h2ulnsi" path="res://scenes/ui/demande_container.gd" id="8_yvtb5"]
 
 [sub_resource type="Resource" id="Resource_v1bdg"]
 script = ExtResource("4_v1bdg")
@@ -164,6 +165,15 @@ custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
 text = "FINI !"
 script = ExtResource("2_xjfbv")
+
+[node name="DemandeContainer" type="TextEdit" parent="." unique_id=2007749740]
+layout_mode = 0
+offset_left = -1.0
+offset_top = 944.0
+offset_right = 1200.0
+offset_bottom = 1080.0
+placeholder_text = "Rien pour l'instant."
+script = ExtResource("8_yvtb5")
 
 [connection signal="desactive" from="." to="ElementView/MarginContainer/VBoxContainer/DoneButton" method="_on_game_ui_desactive"]
 [connection signal="pressed" from="UndoContainer/UndoButton" to="." method="_on_undo_button_pressed"]
