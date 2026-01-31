@@ -1,4 +1,4 @@
-extends Label
+extends Button
 
 
 # Called when the node enters the scene tree for the first time.
@@ -11,5 +11,11 @@ func _process(delta: float) -> void:
 	pass
 
 
-func _on_score_container_score_affiche(score: int) -> void:
-	text = str("SCORE : ", score)
+func _on_game_ui_afficher_score(score: int) -> void:
+	disabled = false
+	visible = true
+
+
+func _on_game_ui_cacher_score() -> void:
+	disabled = true
+	visible = false
