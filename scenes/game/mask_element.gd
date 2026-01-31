@@ -60,3 +60,6 @@ func _process(delta: float) -> void:
 
 func destroy_self() :
 	queue_free()
+
+func rotate_sprite(_angle : float):
+	_sprite_2D.rotation += _angle
