@@ -5,8 +5,6 @@ extends Node2D
 
 @onready var _sprite_2D : Sprite2D = $Sprite2D
 
-var color : Color
-
 var size : float
 
 # Called when the node enters the scene tree for the first time.
