@@ -2,7 +2,6 @@ extends Control
 
 signal done_pressed()
 signal desactive()
-
 signal undo_pressed()
 
 # Called when the node enters the scene tree for the first time.

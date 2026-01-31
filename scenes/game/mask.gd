@@ -29,10 +29,19 @@ func show_mask():
 	var tween = get_tree().create_tween()
 	tween.tween_property($Sprite2D, "position", Vector2(0, 0), 1.0)
 	
+func reset_mask():
+	_elements = []
+	print("Waow, tu as reset le masque !")
+	
+func undo():
+	print("NAN !")
+	
 func _on_main_cacher_masque() -> void:
 	hide_mask()
-	await get_tree().create_timer(2).timeout
+	await get_tree().create_timer(1).timeout
+	reset_mask()
+	await get_tree().create_timer(1).timeout
 	show_mask()
 	
-	
-	
+func _on_main_reset_masque() -> void:
+	undo()

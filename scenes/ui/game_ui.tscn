@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://b1ho6e6qnwxc3"]
 
 [ext_resource type="Script" uid="uid://cghi3mqhadeqw" path="res://scenes/ui/game_ui.gd" id="1_gwk6t"]
-[ext_resource type="Script" path="res://scenes/ui/done_button.gd" id="2_xjfbv"]
+[ext_resource type="Script" uid="uid://jrwmfd36vlcf" path="res://scenes/ui/done_button.gd" id="2_xjfbv"]
 
 [node name="GameUI" type="Control" unique_id=30526492]
 layout_mode = 3
@@ -1010,4 +1010,5 @@ text = "FINI !"
 script = ExtResource("2_xjfbv")
 
 [connection signal="desactive" from="." to="ElementView/MarginContainer/VBoxContainer/DoneButton" method="_on_game_ui_desactive"]
+[connection signal="pressed" from="UndoContainer/UndoButton" to="." method="_on_undo_button_pressed"]
 [connection signal="pressed" from="ElementView/MarginContainer/VBoxContainer/DoneButton" to="." method="_on_done_button_pressed"]

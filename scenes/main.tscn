@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cwbc5foggxevb"]
 
 [ext_resource type="PackedScene" uid="uid://bdcyvgmmxlof1" path="res://scenes/game/mask.tscn" id="1_o5qli"]
-[ext_resource type="Script" path="res://scenes/main.gd" id="1_sugp2"]
+[ext_resource type="Script" uid="uid://do8bwexv2epqi" path="res://scenes/main.gd" id="1_sugp2"]
 [ext_resource type="PackedScene" uid="uid://b1ho6e6qnwxc3" path="res://scenes/ui/game_ui.tscn" id="2_0wfyh"]
 
 [node name="Main" type="Node2D" unique_id=1239285722]
@@ -15,4 +15,6 @@ position = Vector2(595, 572)
 [node name="GameUI" parent="CanvasLayer" unique_id=30526492 instance=ExtResource("2_0wfyh")]
 
 [connection signal="cacher_masque" from="." to="Mask" method="_on_main_cacher_masque"]
+[connection signal="reset_masque" from="." to="Mask" method="_on_main_reset_masque"]
 [connection signal="done_pressed" from="CanvasLayer/GameUI" to="." method="_on_game_ui_done_pressed"]
+[connection signal="undo_pressed" from="CanvasLayer/GameUI" to="." method="_on_game_ui_undo_pressed"]
