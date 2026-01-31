@@ -10,7 +10,7 @@
 script = ExtResource("1_sugp2")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1484604398]
-position = Vector2(602, 537)
+position = Vector2(602, 503)
 scale = Vector2(0.625, 0.62499994)
 texture = ExtResource("2_jyhfs")
 
@@ -18,12 +18,11 @@ texture = ExtResource("2_jyhfs")
 position = Vector2(595, 572)
 base_texture = ExtResource("4_tbgi4")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=881675911]
-layer = 0
-
-[node name="GameUI" parent="CanvasLayer" unique_id=30526492 instance=ExtResource("2_0wfyh")]
+[node name="GameUI" parent="." unique_id=30526492 instance=ExtResource("2_0wfyh")]
+custom_minimum_size = Vector2(1920, 1080)
 offset_left = 0.0
-offset_right = 0.0
+offset_right = 1920.0
+offset_bottom = 1080.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
@@ -38,6 +37,6 @@ position = Vector2(1028, 907)
 [connection signal="cacher_masque" from="." to="Mask" method="_on_main_cacher_masque"]
 [connection signal="reset_masque" from="." to="Mask" method="_on_main_reset_masque"]
 [connection signal="undo_masque" from="." to="Mask" method="_on_main_undo_masque"]
-[connection signal="done_pressed" from="CanvasLayer/GameUI" to="." method="_on_game_ui_done_pressed"]
-[connection signal="reset_pressed" from="CanvasLayer/GameUI" to="." method="_on_game_ui_reset_pressed"]
-[connection signal="undo_pressed" from="CanvasLayer/GameUI" to="." method="_on_game_ui_undo_pressed"]
+[connection signal="done_pressed" from="GameUI" to="." method="_on_game_ui_done_pressed"]
+[connection signal="reset_pressed" from="GameUI" to="." method="_on_game_ui_reset_pressed"]
+[connection signal="undo_pressed" from="GameUI" to="." method="_on_game_ui_undo_pressed"]
