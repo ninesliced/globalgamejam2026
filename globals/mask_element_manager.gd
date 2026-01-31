@@ -4,7 +4,7 @@ var left_click_just_pressed : bool
 var current_mask_element : MaskElement 
 
 func set_mask_element(elem : MaskElement):
-	if current_mask_element :
+	if not current_mask_element :
 		current_mask_element = elem
 	else :
 		current_mask_element.destroy_self()

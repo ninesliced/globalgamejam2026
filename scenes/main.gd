@@ -1,6 +1,7 @@
 extends Node2D
 
 signal cacher_masque()
+signal undo_masque()
 signal reset_masque()
 
 # Called when the node enters the scene tree for the first time.
@@ -18,4 +19,8 @@ func _on_game_ui_done_pressed() -> void:
 
 
 func _on_game_ui_undo_pressed() -> void:
+	undo_masque.emit()
+
+
+func _on_game_ui_reset_pressed() -> void:
 	reset_masque.emit()
