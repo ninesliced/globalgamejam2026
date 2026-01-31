@@ -25,6 +25,7 @@ boot_splash/image="uid://cwkvy4433vg3c"
 
 Globals="*res://globals/global.gd"
 Signalbus="*res://globals/signalbus.gd"
+GlobalMaskElement="*uid://ctw1pqs4varjb"
 
 [display]
 

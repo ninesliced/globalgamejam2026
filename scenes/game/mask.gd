@@ -25,7 +25,7 @@ func hide_mask():
 	position.y = 10000
 	
 func show_mask():
-	position.y = 490
+	position.y = 540
 	
 func _on_main_cacher_masque() -> void:
 	hide_mask()

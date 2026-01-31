@@ -3,14 +3,14 @@
 [ext_resource type="Script" uid="uid://cw8cixxb0d2cm" path="res://scenes/ui/mask_element_ui.gd" id="1_xk7wh"]
 [ext_resource type="PackedScene" uid="uid://dr8b3y6x4mrrf" path="res://scenes/game/MaskElement.tscn" id="2_nmm2j"]
 
-[node name="MaskElementUi" type="Node2D" unique_id=1361634979]
-script = ExtResource("1_xk7wh")
-
-[node name="Button" type="Button" parent="." unique_id=535153327]
+[node name="MaskElementUI" type="Button" unique_id=535153327]
 custom_minimum_size = Vector2(100, 100)
 offset_right = 8.0
 offset_bottom = 8.0
 icon_alignment = 1
 expand_icon = true
+script = ExtResource("1_xk7wh")
 
-[node name="MaskElement" parent="Button" unique_id=1439801195 instance=ExtResource("2_nmm2j")]
+[node name="MaskElement" parent="." unique_id=1439801195 instance=ExtResource("2_nmm2j")]
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

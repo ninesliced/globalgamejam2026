@@ -6,7 +6,7 @@ extends Node2D
 @onready var _sprite_2D : Sprite2D = $Sprite2D
 
 
-var left_click_just_pressed : bool
+#var left_click_just_pressed : bool
 enum MaskElementState {
 	Following, Placed, Icon
 }
@@ -22,19 +22,19 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	scale = Vector2(size, size)
+	
 	
 	match state:
 		MaskElementState.Following :
 			var vector = get_viewport().get_mouse_position()
 			position = vector
-			if left_click_just_pressed : 
+			if GlobalMaskElement.left_click_just_pressed : 
 				
 				state = MaskElementState.Placed
 			
-			
-func _input(event: InputEvent) -> void:
-	
-	if event is InputEventMouseButton:
-		left_click_just_pressed = event.is_pressed() and event.button_index == MOUSE_BUTTON_LEFT
+
+
 		
+
+func destroy_self () :
+	queue_free()
