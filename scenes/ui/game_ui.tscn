@@ -7,3 +7,408 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="Control" type="Control" parent="." unique_id=1802929158]
+custom_minimum_size = Vector2(700, 0)
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="Control" unique_id=655589777]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.11372549)
+
+[node name="MarginContainer" type="MarginContainer" parent="Control" unique_id=1308936941]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/MarginContainer" unique_id=852044811]
+layout_mode = 2
+theme_override_constants/separation = 30
+
+[node name="TabBar" type="TabBar" parent="Control/MarginContainer/VBoxContainer" unique_id=1313018162]
+custom_minimum_size = Vector2(0, 90)
+layout_mode = 2
+theme_override_constants/tab_separation = 10
+current_tab = 0
+tab_count = 3
+tab_0/title = "abc"
+tab_1/title = "abc2"
+tab_2/title = "abc3"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Control/MarginContainer/VBoxContainer" unique_id=762613215]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="GridContainer" type="GridContainer" parent="Control/MarginContainer/VBoxContainer/ScrollContainer" unique_id=2039356249]
+layout_mode = 2
+theme_override_constants/h_separation = 8
+theme_override_constants/v_separation = 8
+columns = 6
+
+[node name="Button" type="Button" parent="Control/MarginContainer/VBoxContainer/ScrollContainer/GridContainer" unique_id=620689152]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+text = "HAHA"
+
+[node name="Button2" type="Button" parent="Control/MarginContainer/VBoxContainer/ScrollContainer/GridContainer" unique_id=420766253]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+text = "HAHA"
+
+[node name="Button3" type="Button" parent="Control/MarginContainer/VBoxContainer/ScrollContainer/GridContainer" unique_id=1271101499]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+text = "HAHA"
+
+[node name="Button4" type="Button" parent="Control/MarginContainer/VBoxContainer/ScrollContainer/GridContainer" unique_id=1111897802]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+text = "HAHA"
+
+[node name="Button5" type="Button" parent="Control/MarginContainer/VBoxContainer/ScrollContainer/GridContainer" unique_id=888214887]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+text = "HAHA"
+
+[node name="Button6" type="Button" parent="Control/MarginContainer/VBoxContainer/ScrollContainer/GridContainer" unique_id=422550726]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+text = "HAHA"
+
+[node name="Button7" type="Button" parent="Control/MarginContainer/VBoxContainer/ScrollContainer/GridContainer" unique_id=1085765140]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+text = "HAHA"
+
+[node name="Button8" type="Button" parent="Control/MarginContainer/VBoxContainer/ScrollContainer/GridContainer" unique_id=325364662]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+text = "HAHA"
+
+[node name="Button9" type="Button" parent="Control/MarginContainer/VBoxContainer/ScrollContainer/GridContainer" unique_id=249943729]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+text = "HAHA"
+
+[node name="Button10" type="Button" parent="Control/MarginContainer/VBoxContainer/ScrollContainer/GridContainer" unique_id=1539045513]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+text = "HAHA"
+
+[node name="Button11" type="Button" parent="Control/MarginContainer/VBoxContainer/ScrollContainer/GridContainer" unique_id=1697748957]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+text = "HAHA"
+
+[node name="Button12" type="Button" parent="Control/MarginContainer/VBoxContainer/ScrollContainer/GridContainer" unique_id=1542072661]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+text = "HAHA"
+
+[node name="Button13" type="Button" parent="Control/MarginContainer/VBoxContainer/ScrollContainer/GridContainer" unique_id=112036269]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+text = "HAHA"
+
+[node name="Button14" type="Button" parent="Control/MarginContainer/VBoxContainer/ScrollContainer/GridContainer" unique_id=1211006369]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+text = "HAHA"
+
+[node name="Button15" type="Button" parent="Control/MarginContainer/VBoxContainer/ScrollContainer/GridContainer" unique_id=490285964]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+text = "HAHA"
+
+[node name="Button16" type="Button" parent="Control/MarginContainer/VBoxContainer/ScrollContainer/GridContainer" unique_id=450049887]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+text = "HAHA"
+
+[node name="Button17" type="Button" parent="Control/MarginContainer/VBoxContainer/ScrollContainer/GridContainer" unique_id=760006907]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+text = "HAHA"
+
+[node name="Button18" type="Button" parent="Control/MarginContainer/VBoxContainer/ScrollContainer/GridContainer" unique_id=903709812]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+text = "HAHA"
+
+[node name="Button19" type="Button" parent="Control/MarginContainer/VBoxContainer/ScrollContainer/GridContainer" unique_id=1459762761]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+text = "HAHA"
+
+[node name="Button20" type="Button" parent="Control/MarginContainer/VBoxContainer/ScrollContainer/GridContainer" unique_id=938186487]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+text = "HAHA"
+
+[node name="Button21" type="Button" parent="Control/MarginContainer/VBoxContainer/ScrollContainer/GridContainer" unique_id=1018673169]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+text = "HAHA"
+
+[node name="Button22" type="Button" parent="Control/MarginContainer/VBoxContainer/ScrollContainer/GridContainer" unique_id=880100050]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+text = "HAHA"
+
+[node name="Button23" type="Button" parent="Control/MarginContainer/VBoxContainer/ScrollContainer/GridContainer" unique_id=1439474812]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+text = "HAHA"
+
+[node name="Button24" type="Button" parent="Control/MarginContainer/VBoxContainer/ScrollContainer/GridContainer" unique_id=1746822322]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+text = "HAHA"
+
+[node name="Button25" type="Button" parent="Control/MarginContainer/VBoxContainer/ScrollContainer/GridContainer" unique_id=1603582233]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+text = "HAHA"
+
+[node name="Button26" type="Button" parent="Control/MarginContainer/VBoxContainer/ScrollContainer/GridContainer" unique_id=1144112478]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+text = "HAHA"
+
+[node name="Button27" type="Button" parent="Control/MarginContainer/VBoxContainer/ScrollContainer/GridContainer" unique_id=14211462]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+text = "HAHA"
+
+[node name="Button28" type="Button" parent="Control/MarginContainer/VBoxContainer/ScrollContainer/GridContainer" unique_id=1771224874]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+text = "HAHA"
+
+[node name="Button29" type="Button" parent="Control/MarginContainer/VBoxContainer/ScrollContainer/GridContainer" unique_id=382819246]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+text = "HAHA"
+
+[node name="Button30" type="Button" parent="Control/MarginContainer/VBoxContainer/ScrollContainer/GridContainer" unique_id=685775735]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+text = "HAHA"
+
+[node name="Button31" type="Button" parent="Control/MarginContainer/VBoxContainer/ScrollContainer/GridContainer" unique_id=1705993388]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+text = "HAHA"
+
+[node name="Button32" type="Button" parent="Control/MarginContainer/VBoxContainer/ScrollContainer/GridContainer" unique_id=1092247211]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+text = "HAHA"
+
+[node name="Button33" type="Button" parent="Control/MarginContainer/VBoxContainer/ScrollContainer/GridContainer" unique_id=1654661425]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+text = "HAHA"
+
+[node name="Button34" type="Button" parent="Control/MarginContainer/VBoxContainer/ScrollContainer/GridContainer" unique_id=500068162]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+text = "HAHA"
+
+[node name="Button35" type="Button" parent="Control/MarginContainer/VBoxContainer/ScrollContainer/GridContainer" unique_id=1343554653]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+text = "HAHA"
+
+[node name="Button36" type="Button" parent="Control/MarginContainer/VBoxContainer/ScrollContainer/GridContainer" unique_id=1319450431]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+text = "HAHA"
+
+[node name="Button37" type="Button" parent="Control/MarginContainer/VBoxContainer/ScrollContainer/GridContainer" unique_id=1012107480]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+text = "HAHA"
+
+[node name="Button38" type="Button" parent="Control/MarginContainer/VBoxContainer/ScrollContainer/GridContainer" unique_id=132327952]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+text = "HAHA"
+
+[node name="Button39" type="Button" parent="Control/MarginContainer/VBoxContainer/ScrollContainer/GridContainer" unique_id=1219820697]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+text = "HAHA"
+
+[node name="Button40" type="Button" parent="Control/MarginContainer/VBoxContainer/ScrollContainer/GridContainer" unique_id=1169036739]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+text = "HAHA"
+
+[node name="Button41" type="Button" parent="Control/MarginContainer/VBoxContainer/ScrollContainer/GridContainer" unique_id=843550265]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+text = "HAHA"
+
+[node name="Button42" type="Button" parent="Control/MarginContainer/VBoxContainer/ScrollContainer/GridContainer" unique_id=1452119064]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+text = "HAHA"
+
+[node name="Button43" type="Button" parent="Control/MarginContainer/VBoxContainer/ScrollContainer/GridContainer" unique_id=970806918]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+text = "HAHA"
+
+[node name="Button44" type="Button" parent="Control/MarginContainer/VBoxContainer/ScrollContainer/GridContainer" unique_id=983978948]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+text = "HAHA"
+
+[node name="Button45" type="Button" parent="Control/MarginContainer/VBoxContainer/ScrollContainer/GridContainer" unique_id=370651378]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+text = "HAHA"
+
+[node name="Button46" type="Button" parent="Control/MarginContainer/VBoxContainer/ScrollContainer/GridContainer" unique_id=2067681459]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+text = "HAHA"
+
+[node name="Button47" type="Button" parent="Control/MarginContainer/VBoxContainer/ScrollContainer/GridContainer" unique_id=277240912]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+text = "HAHA"
+
+[node name="Button48" type="Button" parent="Control/MarginContainer/VBoxContainer/ScrollContainer/GridContainer" unique_id=1912144106]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+text = "HAHA"
+
+[node name="Button49" type="Button" parent="Control/MarginContainer/VBoxContainer/ScrollContainer/GridContainer" unique_id=1706526120]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+text = "HAHA"
+
+[node name="Button50" type="Button" parent="Control/MarginContainer/VBoxContainer/ScrollContainer/GridContainer" unique_id=656013523]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+text = "HAHA"
+
+[node name="Button51" type="Button" parent="Control/MarginContainer/VBoxContainer/ScrollContainer/GridContainer" unique_id=1293755217]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+text = "HAHA"
+
+[node name="Button52" type="Button" parent="Control/MarginContainer/VBoxContainer/ScrollContainer/GridContainer" unique_id=599991578]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+text = "HAHA"
+
+[node name="Button53" type="Button" parent="Control/MarginContainer/VBoxContainer/ScrollContainer/GridContainer" unique_id=1641742356]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+text = "HAHA"
+
+[node name="Button54" type="Button" parent="Control/MarginContainer/VBoxContainer/ScrollContainer/GridContainer" unique_id=1048676011]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+text = "HAHA"
+
+[node name="Button55" type="Button" parent="Control/MarginContainer/VBoxContainer/ScrollContainer/GridContainer" unique_id=1223956190]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+text = "HAHA"
+
+[node name="Button56" type="Button" parent="Control/MarginContainer/VBoxContainer/ScrollContainer/GridContainer" unique_id=1054671425]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+text = "HAHA"
+
+[node name="Button57" type="Button" parent="Control/MarginContainer/VBoxContainer/ScrollContainer/GridContainer" unique_id=904982894]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+text = "HAHA"
+
+[node name="Button58" type="Button" parent="Control/MarginContainer/VBoxContainer/ScrollContainer/GridContainer" unique_id=1599940870]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+text = "HAHA"
+
+[node name="Button59" type="Button" parent="Control/MarginContainer/VBoxContainer/ScrollContainer/GridContainer" unique_id=886839330]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+text = "HAHA"
+
+[node name="Button60" type="Button" parent="Control/MarginContainer/VBoxContainer/ScrollContainer/GridContainer" unique_id=178467681]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+text = "HAHA"
+
+[node name="Button61" type="Button" parent="Control/MarginContainer/VBoxContainer/ScrollContainer/GridContainer" unique_id=1441748074]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+text = "HAHA"
+
+[node name="Button62" type="Button" parent="Control/MarginContainer/VBoxContainer/ScrollContainer/GridContainer" unique_id=1054422066]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+text = "HAHA"
+
+[node name="Button63" type="Button" parent="Control/MarginContainer/VBoxContainer/ScrollContainer/GridContainer" unique_id=1481569644]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+text = "HAHA"
+
+[node name="Button64" type="Button" parent="Control/MarginContainer/VBoxContainer/ScrollContainer/GridContainer" unique_id=226475686]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+text = "HAHA"
+
+[node name="Button65" type="Button" parent="Control/MarginContainer/VBoxContainer/ScrollContainer/GridContainer" unique_id=1653144870]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+text = "HAHA"
+
+[node name="Button66" type="Button" parent="Control/MarginContainer/VBoxContainer/ScrollContainer/GridContainer" unique_id=196470667]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+text = "HAHA"
+
+[node name="Button67" type="Button" parent="Control/MarginContainer/VBoxContainer/ScrollContainer/GridContainer" unique_id=1691867911]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+text = "HAHA"
+
+[node name="Button68" type="Button" parent="Control/MarginContainer/VBoxContainer/ScrollContainer/GridContainer" unique_id=1099481979]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+text = "HAHA"
+
+[node name="Button69" type="Button" parent="Control/MarginContainer/VBoxContainer/ScrollContainer/GridContainer" unique_id=1354898805]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+text = "HAHA"
+
+[node name="Button70" type="Button" parent="Control/MarginContainer/VBoxContainer/ScrollContainer/GridContainer" unique_id=1031379102]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+text = "HAHA"
