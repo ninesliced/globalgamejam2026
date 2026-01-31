@@ -22,13 +22,17 @@ func remove_last_element():
 	_elements.pop_back()
 	
 func hide_mask():
-	position.y = 10000
+	var tween = get_tree().create_tween()
+	tween.tween_property($Sprite2D, "position", Vector2(0, 1000), 1.0)
 	
 func show_mask():
-	position.y = 540
+	var tween = get_tree().create_tween()
+	tween.tween_property($Sprite2D, "position", Vector2(0, 0), 1.0)
 	
 func _on_main_cacher_masque() -> void:
 	hide_mask()
 	await get_tree().create_timer(2).timeout
 	show_mask()
+	
+	
 	
