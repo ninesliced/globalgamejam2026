@@ -7,21 +7,26 @@
 [ext_resource type="Texture2D" uid="uid://hpjlbxfev3io" path="res://assets/sprites/masks/Mask_accessories/asset_mask_accessories_goateye_yellow.png" id="4_qrkc0"]
 [ext_resource type="Script" uid="uid://bu0cj2eyjrvn4" path="res://ressources/mask_element_param.gd" id="4_v1bdg"]
 [ext_resource type="Texture2D" uid="uid://vtursprimdlv" path="res://assets/sprites/masks/Mask_accessories/asset_mask_accessories_eye_only.png" id="5_yvtb5"]
-[ext_resource type="Script" uid="uid://dpc8w6h2ulnsi" path="res://scenes/ui/demande_container.gd" id="8_yvtb5"]
+[ext_resource type="Script" path="res://scenes/ui/demande_container.gd" id="8_yvtb5"]
 
 [sub_resource type="Resource" id="Resource_v1bdg"]
 script = ExtResource("4_v1bdg")
 base_texture = ExtResource("3_v1bdg")
+element_types = Array[int]([0])
 metadata/_custom_type_script = "uid://bu0cj2eyjrvn4"
 
 [sub_resource type="Resource" id="Resource_qrkc0"]
 script = ExtResource("4_v1bdg")
 base_texture = ExtResource("5_yvtb5")
+color = 3
+element_types = Array[int]([0])
 metadata/_custom_type_script = "uid://bu0cj2eyjrvn4"
 
 [sub_resource type="Resource" id="Resource_yvtb5"]
 script = ExtResource("4_v1bdg")
 base_texture = ExtResource("4_qrkc0")
+color = 1
+element_types = Array[int]([0])
 metadata/_custom_type_script = "uid://bu0cj2eyjrvn4"
 
 [node name="GameUI" type="Control" unique_id=30526492]
@@ -130,6 +135,10 @@ layout_mode = 2
 _element_param = SubResource("Resource_qrkc0")
 
 [node name="MaskElementUI3" parent="ElementView/MarginContainer/VBoxContainer/TabContainer/ScrollContainer/MarginContainer/GridContainer" unique_id=481115001 instance=ExtResource("2_ru5ln")]
+layout_mode = 2
+_element_param = SubResource("Resource_yvtb5")
+
+[node name="MaskElementUI4" parent="ElementView/MarginContainer/VBoxContainer/TabContainer/ScrollContainer/MarginContainer/GridContainer" unique_id=925392032 instance=ExtResource("2_ru5ln")]
 layout_mode = 2
 _element_param = SubResource("Resource_yvtb5")
 

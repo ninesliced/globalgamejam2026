@@ -82,8 +82,25 @@ func _on_main_undo_masque() -> void:
 	undo()
 
 
-func _condition_at_least_one(cond: Callable):
+func count_with_color_and_type(color: MaskElement.ElementColor, typ: MaskElement.ElementType):
+	var count = 0
 	for e in _elements:
-		if cond.call(e):
-			return true
-	return false
+		if e.color == color and e.element_types.has(typ):
+			count += 1
+	return count
+
+
+func count_with_color(color: MaskElement.ElementColor):
+	var count = 0
+	for e in _elements:
+		if e.color == color:
+			count += 1
+	return count
+
+
+func count_with_type(typ: MaskElement.ElementType):
+	var count = 0
+	for e in _elements:
+		if e.element_types.has(typ):
+			count += 1
+	return count
