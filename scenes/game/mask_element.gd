@@ -36,8 +36,5 @@ func _process(delta: float) -> void:
 				state = MaskElementState.Placed
 			
 
-
-		
-
-func destroy_self () :
+func destroy_self() :
 	queue_free()

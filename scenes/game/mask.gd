@@ -10,6 +10,8 @@ var _elements: Array[MaskElement] = []
 func _ready() -> void:
 	_sprite.texture = base_texture
 
+func _process(delta: float) -> void:
+	print(_elements.size())
 
 func add_element(_element):
 	_elements.append(_element)
@@ -19,7 +21,9 @@ func add_element(_element):
 func remove_last_element():
 	if _elements.is_empty():
 		return
-	_elements.pop_back()
+	
+	var e = _elements.pop_back()
+	e.destroy_self()
 	
 func hide_mask():
 	var tween = get_tree().create_tween()
@@ -30,7 +34,10 @@ func show_mask():
 	tween.tween_property($Sprite2D, "position", Vector2(0, 0), 1.0)
 	
 func reset_mask():
-	_elements = [] # Marche peut-être
+	for e in _elements:
+		e.destroy_self()
+
+	_elements = []
 	print("Waow, tu as reset le masque !")
 	
 func undo():
