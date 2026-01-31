@@ -5,6 +5,8 @@ signal desactive()
 signal undo_pressed()
 signal reset_pressed()
 signal demande_signal(demande : String)
+signal afficher_score()
+signal cacher_score()
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -30,3 +32,11 @@ func _on_undo_button_pressed() -> void:
 func _on_reset_button_pressed() -> void:
 	reset_pressed.emit()
 	demande_signal.emit("RESET")
+
+
+func _on_main_afficher_score() -> void:
+	afficher_score.emit()
+
+
+func _on_main_cacher_score() -> void:
+	cacher_score.emit()
