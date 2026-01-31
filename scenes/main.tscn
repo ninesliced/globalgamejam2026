@@ -1,7 +1,14 @@
 [gd_scene format=3 uid="uid://cwbc5foggxevb"]
 
 [ext_resource type="PackedScene" uid="uid://bdcyvgmmxlof1" path="res://scenes/game/mask.tscn" id="1_o5qli"]
+[ext_resource type="PackedScene" uid="uid://b1ho6e6qnwxc3" path="res://scenes/ui/game_ui.tscn" id="2_0wfyh"]
 
 [node name="Main" type="Node2D" unique_id=1239285722]
 
 [node name="Mask" parent="." unique_id=1566539684 instance=ExtResource("1_o5qli")]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1870051476]
+
+[node name="GameUI" parent="CanvasLayer" unique_id=30526492 instance=ExtResource("2_0wfyh")]
+size_flags_horizontal = 3
+size_flags_vertical = 3
