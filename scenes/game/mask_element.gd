@@ -43,6 +43,7 @@ func _ready() -> void:
 func init_element(_param: MaskElementParam):
 	base_texture = _param.base_texture
 	color = _param.color
+	element_types = _param.element_types
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

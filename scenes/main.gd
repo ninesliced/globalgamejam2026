@@ -8,6 +8,7 @@ signal afficher_score(score : int)
 signal cacher_score()
 
 @onready var mask = $Mask
+@onready var mask_checker = $MaskChecker
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -21,6 +22,8 @@ func _process(delta: float) -> void:
 
 func _on_game_ui_done_pressed() -> void:
 	cacher_masque.emit()
+	var success = mask_checker.check(null, MaskManager.current_mask)
+	print("success ", success)
 
 
 func _on_game_ui_undo_pressed() -> void:
