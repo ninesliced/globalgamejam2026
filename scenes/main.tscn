@@ -1,3 +1,7 @@
 [gd_scene format=3 uid="uid://cwbc5foggxevb"]
 
-[node name="Main" type="Node2D"]
+[ext_resource type="PackedScene" uid="uid://bdcyvgmmxlof1" path="res://scenes/mask.tscn" id="1_o5qli"]
+
+[node name="Main" type="Node2D" unique_id=1239285722]
+
+[node name="Mask" parent="." unique_id=1566539684 instance=ExtResource("1_o5qli")]
