@@ -29,7 +29,7 @@ func remove_last_element():
 	
 func hide_mask():
 	var tween = get_tree().create_tween()
-	tween.tween_property(self, "position", Vector2(600, 1200), 1.0)
+	tween.tween_property(self, "position", Vector2(600, 2000), 1.0)
 
 func show_mask():
 	var tween = get_tree().create_tween()
@@ -41,10 +41,6 @@ func reset_mask():
 			e.destroy_self()
 
 	_elements = []
-	print("Waow, tu as reset le masque !")
-	
-func undo():
-	print("NAN !")
 
 func alea_demande():
 	pass
@@ -77,10 +73,6 @@ func _on_main_cacher_masque() -> void:
 
 func _on_main_reset_masque() -> void:
 	reset_mask()
-
-func _on_main_undo_masque() -> void:
-	undo()
-
 
 func _condition_at_least_one(cond: Callable):
 	for e in _elements:
