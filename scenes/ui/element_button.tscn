@@ -12,5 +12,6 @@ expand_icon = true
 script = ExtResource("1_xk7wh")
 
 [node name="MaskElement" parent="." unique_id=1439801195 instance=ExtResource("2_nmm2j")]
+visible = false
 
 [connection signal="pressed" from="." to="." method="_on_pressed"]

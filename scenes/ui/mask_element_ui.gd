@@ -8,6 +8,7 @@ var _mask_element_scene = load("res://scenes/game/MaskElement.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	icon = _element_param.base_texture
 	_mask_element.base_texture = _element_param.base_texture
 
 
