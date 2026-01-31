@@ -28,12 +28,14 @@ custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 0
+text = "UNDO"
 
 [node name="ResetButton" type="Button" parent="UndoContainer" unique_id=1735923866]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
+text = "RESET"
 
 [node name="ElementView" type="Control" parent="." unique_id=1802929158]
 custom_minimum_size = Vector2(720, 0)

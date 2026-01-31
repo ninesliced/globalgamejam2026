@@ -30,7 +30,7 @@ func show_mask():
 	tween.tween_property($Sprite2D, "position", Vector2(0, 0), 1.0)
 	
 func reset_mask():
-	_elements = []
+	_elements = [] # Marche peut-être
 	print("Waow, tu as reset le masque !")
 	
 func undo():
