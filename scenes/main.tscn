@@ -26,6 +26,14 @@ offset_bottom = 1080.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
+[node name="Makers" type="Node2D" parent="." unique_id=1284605401]
+
+[node name="Marker2D" type="Marker2D" parent="Makers" unique_id=2006601071]
+position = Vector2(130, 128)
+
+[node name="Marker2D2" type="Marker2D" parent="Makers" unique_id=1829642869]
+position = Vector2(1028, 907)
+
 [connection signal="cacher_masque" from="." to="Mask" method="_on_main_cacher_masque"]
 [connection signal="reset_masque" from="." to="Mask" method="_on_main_reset_masque"]
 [connection signal="undo_masque" from="." to="Mask" method="_on_main_undo_masque"]

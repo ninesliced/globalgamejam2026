@@ -29,7 +29,7 @@ func remove_last_element():
 	
 func hide_mask():
 	var tween = get_tree().create_tween()
-	tween.tween_property(self, "position", Vector2(600, 1200), 1.0)
+	tween.tween_property(self, "position", Vector2(600, 2000), 1.0)
 
 func show_mask():
 	var tween = get_tree().create_tween()
@@ -41,10 +41,6 @@ func reset_mask():
 			e.destroy_self()
 
 	_elements = []
-	print("Waow, tu as reset le masque !")
-	
-func undo():
-	print("NAN !")
 
 func alea_demande():
 	pass
@@ -84,11 +80,6 @@ func _on_main_undo_masque() -> void:
 
 func count_with_color_and_type(color: MaskElement.ElementColor, typ: MaskElement.ElementType):
 	var count = 0
-	for e in _elements:
-		if e.color == color and e.element_types.has(typ):
-			count += 1
-	return count
-
 
 func count_with_color(color: MaskElement.ElementColor):
 	var count = 0
