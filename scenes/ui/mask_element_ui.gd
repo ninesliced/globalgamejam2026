@@ -1,7 +1,5 @@
 extends Button
 
-@export var base_texture : Texture
-
 @onready var _mask_element : MaskElement = $MaskElement
 
 @export var _element_param : MaskElementParam
@@ -19,7 +17,7 @@ func _process(delta: float) -> void:
 	
 
 func _on_pressed() -> void:
-	var s = _mask_element_scene.instantiate()
-	s.base_texture = _element_param.base_texture
+	var s: MaskElement = _mask_element_scene.instantiate()
+	s.init_element(_element_param)
 	get_tree().current_scene.add_child(s)
 	GlobalMaskElement.set_mask_element(s)

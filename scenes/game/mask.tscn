@@ -8,4 +8,3 @@ script = ExtResource("1_in0c2")
 base_texture = ExtResource("2_rv8xw")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=552707263]
-texture = ExtResource("2_rv8xw")
