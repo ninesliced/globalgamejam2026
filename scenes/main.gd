@@ -4,9 +4,11 @@ signal cacher_masque()
 signal undo_masque()
 signal reset_masque()
 
+@onready var mask = $Mask
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass
+	MaskManager.current_mask = $Mask
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -19,7 +21,7 @@ func _on_game_ui_done_pressed() -> void:
 
 
 func _on_game_ui_undo_pressed() -> void:
-	undo_masque.emit()
+	mask.remove_last_element()
 
 
 func _on_game_ui_reset_pressed() -> void:
