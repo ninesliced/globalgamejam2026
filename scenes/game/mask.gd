@@ -14,9 +14,9 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	print(_elements.size())
 
-func add_element(_element):
+func add_element(_element: MaskElement):
 	_elements.append(_element)
-	add_child(_element)
+	_element.reparent(self)
 
 func remove_last_element():
 	if _elements.is_empty():
@@ -27,11 +27,11 @@ func remove_last_element():
 	
 func hide_mask():
 	var tween = get_tree().create_tween()
-	tween.tween_property($Sprite2D, "position", Vector2(0, 1000), 1.0)
+	tween.tween_property(self, "position", Vector2(600, 1200), 1.0)
 
 func show_mask():
 	var tween = get_tree().create_tween()
-	tween.tween_property($Sprite2D, "position", Vector2(0, 0), 1.0)
+	tween.tween_property(self, "position", Vector2(600, 540), 1.0)
 
 func reset_mask():
 	for e in _elements:
