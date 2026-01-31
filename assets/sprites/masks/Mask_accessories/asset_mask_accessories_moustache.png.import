@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dlccdfer0d6ub"
-path="res://.godot/imported/asset_mask_accessories_moustaches.png-432fdb62ab61dce891abf73f92342afd.ctex"
+uid="uid://cs3c3ev50431y"
+path="res://.godot/imported/asset_mask_accessories_moustache.png-2eeac1459acc126ac9606af70ca0f0d1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/masks/Mask_accessories/asset_mask_accessories_moustaches.png"
-dest_files=["res://.godot/imported/asset_mask_accessories_moustaches.png-432fdb62ab61dce891abf73f92342afd.ctex"]
+source_file="res://assets/sprites/masks/Mask_accessories/asset_mask_accessories_moustache.png"
+dest_files=["res://.godot/imported/asset_mask_accessories_moustache.png-2eeac1459acc126ac9606af70ca0f0d1.ctex"]
 
 [params]
 

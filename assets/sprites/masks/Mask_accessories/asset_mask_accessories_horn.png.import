@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b804cspnjadwe"
-path="res://.godot/imported/asset_mask_accessories_goatears.png-cad89a16da4ef5f68b097db62f87aa00.ctex"
+uid="uid://b084hgumkybn8"
+path="res://.godot/imported/asset_mask_accessories_horn.png-a85df8c26bf0c2d7ccbbd8bc3a77407a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/masks/Mask_accessories/asset_mask_accessories_goatears.png"
-dest_files=["res://.godot/imported/asset_mask_accessories_goatears.png-cad89a16da4ef5f68b097db62f87aa00.ctex"]
+source_file="res://assets/sprites/masks/Mask_accessories/asset_mask_accessories_horn.png"
+dest_files=["res://.godot/imported/asset_mask_accessories_horn.png-a85df8c26bf0c2d7ccbbd8bc3a77407a.ctex"]
 
 [params]
 

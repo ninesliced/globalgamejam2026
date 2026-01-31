@@ -12,11 +12,13 @@ func _ready() -> void:
 	_sprite.texture = base_texture
 
 func _process(delta: float) -> void:
-	print(_elements.size())
+	pass
 
-func add_element(_element):
+func add_element(_element: MaskElement):
+	if not _element:
+		return
 	_elements.append(_element)
-	add_child(_element)
+	_element.reparent(self)
 
 func remove_last_element():
 	if _elements.is_empty():
@@ -27,21 +29,18 @@ func remove_last_element():
 	
 func hide_mask():
 	var tween = get_tree().create_tween()
-	tween.tween_property($Sprite2D, "position", Vector2(0, 1000), 1.0)
+	tween.tween_property(self, "position", Vector2(600, 2000), 1.0)
 
 func show_mask():
 	var tween = get_tree().create_tween()
-	tween.tween_property($Sprite2D, "position", Vector2(0, 0), 1.0)
+	tween.tween_property(self, "position", Vector2(600, 540), 1.0)
 
 func reset_mask():
 	for e in _elements:
-		e.destroy_self()
+		if e:
+			e.destroy_self()
 
 	_elements = []
-	print("Waow, tu as reset le masque !")
-	
-func undo():
-	print("NAN !")
 
 func alea_demande():
 	pass
@@ -77,3 +76,22 @@ func _on_main_reset_masque() -> void:
 
 func _on_main_undo_masque() -> void:
 	undo()
+
+
+func count_with_color_and_type(color: MaskElement.ElementColor, typ: MaskElement.ElementType):
+	var count = 0
+
+func count_with_color(color: MaskElement.ElementColor):
+	var count = 0
+	for e in _elements:
+		if e.color == color:
+			count += 1
+	return count
+
+
+func count_with_type(typ: MaskElement.ElementType):
+	var count = 0
+	for e in _elements:
+		if e.element_types.has(typ):
+			count += 1
+	return count
