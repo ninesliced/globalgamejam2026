@@ -21,4 +21,5 @@ func _process(delta: float) -> void:
 func _on_pressed() -> void:
 	var s = _mask_element_scene.instantiate()
 	s.base_texture = _element_param.base_texture
+	get_parent().add_child(s)
 	GlobalMaskElement.set_mask_element(s)

@@ -1,7 +1,14 @@
 [gd_scene format=3 uid="uid://ctxqwufipbljy"]
 
 [ext_resource type="Script" uid="uid://cw8cixxb0d2cm" path="res://scenes/ui/mask_element_ui.gd" id="1_xk7wh"]
+[ext_resource type="Script" uid="uid://bu0cj2eyjrvn4" path="res://ressources/mask_element_param.gd" id="2_i6u02"]
 [ext_resource type="PackedScene" uid="uid://dr8b3y6x4mrrf" path="res://scenes/game/MaskElement.tscn" id="2_nmm2j"]
+[ext_resource type="Texture2D" uid="uid://c0vgnvipqqoaj" path="res://placeholder/place_holder_sprite.png" id="2_pe1g6"]
+
+[sub_resource type="Resource" id="Resource_pe1g6"]
+script = ExtResource("2_i6u02")
+base_texture = ExtResource("2_pe1g6")
+metadata/_custom_type_script = "uid://bu0cj2eyjrvn4"
 
 [node name="MaskElementUI" type="Button" unique_id=535153327]
 custom_minimum_size = Vector2(100, 100)
@@ -10,7 +17,9 @@ offset_bottom = 8.0
 icon_alignment = 1
 expand_icon = true
 script = ExtResource("1_xk7wh")
+_element_param = SubResource("Resource_pe1g6")
 
 [node name="MaskElement" parent="." unique_id=1439801195 instance=ExtResource("2_nmm2j")]
+state = 2
 
 [connection signal="pressed" from="." to="." method="_on_pressed"]

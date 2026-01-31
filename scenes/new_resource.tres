@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="MaskElementParam" format=3 uid="uid://cx7e0dgmo2c76"]
+
+[ext_resource type="Script" uid="uid://bu0cj2eyjrvn4" path="res://ressources/mask_element_param.gd" id="1_86nej"]
+[ext_resource type="Texture2D" uid="uid://dd8gk5newspms" path="res://placeholder/tarteaucitronmeringuee.png" id="1_bm14d"]
+
+[resource]
+script = ExtResource("1_86nej")
+base_texture = ExtResource("1_bm14d")
+metadata/_custom_type_script = "uid://bu0cj2eyjrvn4"
