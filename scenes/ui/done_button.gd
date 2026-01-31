@@ -1,7 +1,5 @@
-extends Control
+extends Button
 
-signal done_pressed()
-signal desactive()
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -13,6 +11,7 @@ func _process(delta: float) -> void:
 	pass
 
 
-func _on_done_button_pressed() -> void:
-	done_pressed.emit()
-	desactive.emit()
+func _on_game_ui_desactive() -> void:
+	disabled = true;
+	await get_tree().create_timer(2.5).timeout
+	disabled = false;
