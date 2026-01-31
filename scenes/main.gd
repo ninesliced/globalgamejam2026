@@ -3,6 +3,9 @@ extends Node2D
 signal cacher_masque()
 signal undo_masque()
 signal reset_masque()
+signal demarrer_timer()
+signal afficher_score()
+signal cacher_score()
 
 @onready var mask = $Mask
 @onready var mask_checker = $MaskChecker
@@ -10,6 +13,7 @@ signal reset_masque()
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	MaskManager.current_mask = $Mask
+	demarrer_timer.emit()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -29,3 +33,10 @@ func _on_game_ui_undo_pressed() -> void:
 
 func _on_game_ui_reset_pressed() -> void:
 	reset_masque.emit()
+
+
+func _on_timer_timeout() -> void:
+	afficher_score.emit()
+	await get_tree().create_timer(10).timeout
+	cacher_score.emit()
+	demarrer_timer.emit()
