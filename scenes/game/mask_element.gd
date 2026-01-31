@@ -29,7 +29,7 @@ func _process(delta: float) -> void:
 			var vector = get_viewport().get_mouse_position()
 			position = vector
 			if GlobalMaskElement.left_click_just_pressed : 
-				
+				GlobalMaskElement.place_element()
 				state = MaskElementState.Placed
 			
 

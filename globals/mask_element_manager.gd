@@ -1,4 +1,3 @@
-class_name MaskElementManager
 extends Node2D
 
 var left_click_just_pressed : bool
@@ -10,7 +9,11 @@ func set_mask_element(elem : MaskElement):
 	else :
 		current_mask_element.destroy_self()
 		current_mask_element = elem
-		
+
+func place_element():
+	MaskManager.current_mask.add_element(current_mask_element)
+	current_mask_element =null
+
 func _input(event: InputEvent) -> void:
 	
 	if event is InputEventMouseButton:
