@@ -21,3 +21,14 @@ func remove_last_element():
 		return
 	_elements.pop_back()
 	
+func hide_mask():
+	position.y = 10000
+	
+func show_mask():
+	position.y = 490
+	
+func _on_main_cacher_masque() -> void:
+	hide_mask()
+	await get_tree().create_timer(2).timeout
+	show_mask()
+	

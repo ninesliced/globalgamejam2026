@@ -1,5 +1,7 @@
 [gd_scene format=3 uid="uid://b1ho6e6qnwxc3"]
 
+[ext_resource type="Script" uid="uid://cghi3mqhadeqw" path="res://scenes/ui/game_ui.gd" id="1_gwk6t"]
+
 [node name="GameUI" type="Control" unique_id=30526492]
 layout_mode = 3
 anchors_preset = 15
@@ -7,6 +9,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_gwk6t")
 
 [node name="Control" type="Control" parent="." unique_id=1802929158]
 custom_minimum_size = Vector2(700, 0)
@@ -416,4 +419,6 @@ text = "HAHA"
 [node name="DoneButton" type="Button" parent="Control/MarginContainer/VBoxContainer" unique_id=1121714574]
 custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
-text = "FINI"
+text = "FINI !"
+
+[connection signal="pressed" from="Control/MarginContainer/VBoxContainer/DoneButton" to="." method="_on_done_button_pressed"]
