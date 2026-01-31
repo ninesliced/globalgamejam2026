@@ -71,12 +71,18 @@ func _on_main_cacher_masque() -> void:
 	await get_tree().create_timer(1).timeout
 	show_mask()
 
+
 func _on_main_reset_masque() -> void:
 	reset_mask()
 
 
 func count_with_color_and_type(color: MaskElement.ElementColor, typ: MaskElement.ElementType):
 	var count = 0
+	for e in _elements:
+		if e.color == color and e.element_types.has(typ	):
+			count += 1
+	return count
+
 
 func count_with_color(color: MaskElement.ElementColor):
 	var count = 0

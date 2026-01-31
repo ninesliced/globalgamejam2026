@@ -31,6 +31,13 @@ color = 1
 element_types = Array[int]([0])
 metadata/_custom_type_script = "uid://bu0cj2eyjrvn4"
 
+[sub_resource type="Resource" id="Resource_fftnl"]
+script = ExtResource("4_v1bdg")
+base_texture = ExtResource("7_k7elv")
+color = 1
+element_types = Array[int]([0])
+metadata/_custom_type_script = "uid://bu0cj2eyjrvn4"
+
 [sub_resource type="GDScript" id="GDScript_yvtb5"]
 
 [node name="GameUI" type="Control" unique_id=30526492]
@@ -144,7 +151,7 @@ _element_param = SubResource("Resource_yvtb5")
 
 [node name="MaskElementUI4" parent="ElementView/MarginContainer/VBoxContainer/TabContainer/ScrollContainer/MarginContainer/GridContainer" unique_id=925392032 instance=ExtResource("2_ru5ln")]
 layout_mode = 2
-_element_param = SubResource("Resource_yvtb5")
+_element_param = SubResource("Resource_fftnl")
 
 [node name="ScrollContainer2" type="ScrollContainer" parent="ElementView/MarginContainer/VBoxContainer/TabContainer" unique_id=253361562]
 visible = false
