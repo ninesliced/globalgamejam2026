@@ -412,3 +412,8 @@ text = "HAHA"
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 text = "HAHA"
+
+[node name="DoneButton" type="Button" parent="Control/MarginContainer/VBoxContainer" unique_id=1121714574]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+text = "FINI"
