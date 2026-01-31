@@ -53,7 +53,8 @@ func _process(delta: float) -> void:
 		MaskElementState.Following :
 			var vector = get_viewport().get_mouse_position()
 			position = vector
-			if GlobalMaskElement.left_click_just_pressed : 
+			if GlobalMaskElement.left_click_just_pressed and GlobalMaskElement.is_in_area(position) : 
+				
 				GlobalMaskElement.place_element()
 				state = MaskElementState.Placed
 			
@@ -62,4 +63,4 @@ func destroy_self() :
 	queue_free()
 
 func rotate_sprite(_angle : float):
-	_sprite_2D.rotation += _angle
+	_sprite_2D.rotation_degrees += _angle
