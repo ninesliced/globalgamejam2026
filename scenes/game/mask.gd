@@ -7,16 +7,16 @@ extends Node2D
 
 var _elements: Array[MaskElement] = []
 
+
 func _ready() -> void:
 	_sprite.texture = base_texture
 
 func _process(delta: float) -> void:
 	pass
 
-func add_element(_element):
+func add_element(_element: MaskElement):
 	_elements.append(_element)
-	add_child(_element)
-
+	_element.reparent(self)
 
 func remove_last_element():
 	if _elements.is_empty():
@@ -27,12 +27,12 @@ func remove_last_element():
 	
 func hide_mask():
 	var tween = get_tree().create_tween()
-	tween.tween_property($Sprite2D, "position", Vector2(0, 1000), 1.0)
-	
+	tween.tween_property(self, "position", Vector2(600, 1200), 1.0)
+
 func show_mask():
 	var tween = get_tree().create_tween()
-	tween.tween_property($Sprite2D, "position", Vector2(0, 0), 1.0)
-	
+	tween.tween_property(self, "position", Vector2(600, 540), 1.0)
+
 func reset_mask():
 	for e in _elements:
 		if e:
@@ -43,17 +43,38 @@ func reset_mask():
 	
 func undo():
 	print("NAN !")
+
+func alea_demande():
+	pass
+
+func nouvelles_demandes():
+	pass
+
+func evaluer_masque():
+	pass
+	# Couleur
+	# Yeux
+	# Bouche
+	# Oreilles
+	# Cornes/Décorations
+	# Reste
 	
+
+
+# Réactions aux signaux
+
 func _on_main_cacher_masque() -> void:
 	hide_mask()
 	await get_tree().create_timer(1).timeout
+	evaluer_masque()
+	await get_tree().create_timer(1).timeout
 	reset_mask()
+	nouvelles_demandes()
 	await get_tree().create_timer(1).timeout
 	show_mask()
-	
+
 func _on_main_reset_masque() -> void:
 	reset_mask()
-
 
 func _on_main_undo_masque() -> void:
 	undo()
