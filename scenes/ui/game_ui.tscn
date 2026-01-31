@@ -8,9 +8,10 @@
 [ext_resource type="Script" uid="uid://bu0cj2eyjrvn4" path="res://ressources/mask_element_param.gd" id="4_v1bdg"]
 [ext_resource type="Texture2D" uid="uid://vtursprimdlv" path="res://assets/sprites/masks/Mask_accessories/asset_mask_accessories_eye_only.png" id="5_yvtb5"]
 [ext_resource type="Texture2D" uid="uid://3yctxi7r7qpi" path="res://assets/sprites/masks/Mask_accessories/asset_mask_accessories_eyes_redd.png" id="7_bxde6"]
-[ext_resource type="Script" path="res://scenes/ui/score_container.gd" id="9_fftnl"]
-[ext_resource type="Script" path="res://scenes/ui/demande_label.gd" id="9_k7elv"]
-[ext_resource type="Script" path="res://scenes/ui/label.gd" id="10_bxde6"]
+[ext_resource type="Script" uid="uid://dkmaup7nq7hsn" path="res://scenes/ui/score_container.gd" id="9_fftnl"]
+[ext_resource type="Script" uid="uid://tw16esbo0he7" path="res://scenes/ui/demande_label.gd" id="9_k7elv"]
+[ext_resource type="Script" uid="uid://b2ggnfubsbepm" path="res://scenes/ui/label.gd" id="10_bxde6"]
+[ext_resource type="Script" uid="uid://d28dio67ttnk5" path="res://scenes/ui/button.gd" id="11_bxde6"]
 
 [sub_resource type="Resource" id="Resource_v1bdg"]
 script = ExtResource("4_v1bdg")
