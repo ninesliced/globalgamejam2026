@@ -3,8 +3,25 @@
 [ext_resource type="Script" uid="uid://cghi3mqhadeqw" path="res://scenes/ui/game_ui.gd" id="1_gwk6t"]
 [ext_resource type="PackedScene" uid="uid://ctxqwufipbljy" path="res://scenes/ui/element_button.tscn" id="2_ru5ln"]
 [ext_resource type="Script" uid="uid://jrwmfd36vlcf" path="res://scenes/ui/done_button.gd" id="2_xjfbv"]
-[ext_resource type="Texture2D" uid="uid://dd8gk5newspms" path="res://placeholder/tarteaucitronmeringuee.png" id="3_ru5ln"]
-[ext_resource type="Script" uid="uid://dpc8w6h2ulnsi" path="res://scenes/ui/demande_container.gd" id="5_ru5ln"]
+[ext_resource type="Texture2D" uid="uid://dp0rnx2bq4ehi" path="res://assets/sprites/masks/Mask_accessories/asset_mask_accessories_3eyes.png" id="3_v1bdg"]
+[ext_resource type="Texture2D" uid="uid://hpjlbxfev3io" path="res://assets/sprites/masks/Mask_accessories/asset_mask_accessories_goateye_yellow.png" id="4_qrkc0"]
+[ext_resource type="Script" uid="uid://bu0cj2eyjrvn4" path="res://ressources/mask_element_param.gd" id="4_v1bdg"]
+[ext_resource type="Texture2D" uid="uid://vtursprimdlv" path="res://assets/sprites/masks/Mask_accessories/asset_mask_accessories_eye_only.png" id="5_yvtb5"]
+
+[sub_resource type="Resource" id="Resource_v1bdg"]
+script = ExtResource("4_v1bdg")
+base_texture = ExtResource("3_v1bdg")
+metadata/_custom_type_script = "uid://bu0cj2eyjrvn4"
+
+[sub_resource type="Resource" id="Resource_qrkc0"]
+script = ExtResource("4_v1bdg")
+base_texture = ExtResource("5_yvtb5")
+metadata/_custom_type_script = "uid://bu0cj2eyjrvn4"
+
+[sub_resource type="Resource" id="Resource_yvtb5"]
+script = ExtResource("4_v1bdg")
+base_texture = ExtResource("4_qrkc0")
+metadata/_custom_type_script = "uid://bu0cj2eyjrvn4"
 
 [node name="GameUI" type="Control" unique_id=30526492]
 layout_mode = 3
@@ -105,7 +122,15 @@ columns = 6
 
 [node name="MaskElementUI" parent="ElementView/MarginContainer/VBoxContainer/TabContainer/ScrollContainer/MarginContainer/GridContainer" unique_id=535153327 instance=ExtResource("2_ru5ln")]
 layout_mode = 2
-base_texture = ExtResource("3_ru5ln")
+_element_param = SubResource("Resource_v1bdg")
+
+[node name="MaskElementUI2" parent="ElementView/MarginContainer/VBoxContainer/TabContainer/ScrollContainer/MarginContainer/GridContainer" unique_id=2040810180 instance=ExtResource("2_ru5ln")]
+layout_mode = 2
+_element_param = SubResource("Resource_qrkc0")
+
+[node name="MaskElementUI3" parent="ElementView/MarginContainer/VBoxContainer/TabContainer/ScrollContainer/MarginContainer/GridContainer" unique_id=481115001 instance=ExtResource("2_ru5ln")]
+layout_mode = 2
+_element_param = SubResource("Resource_yvtb5")
 
 [node name="ScrollContainer2" type="ScrollContainer" parent="ElementView/MarginContainer/VBoxContainer/TabContainer" unique_id=253361562]
 visible = false

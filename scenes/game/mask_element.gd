@@ -6,8 +6,26 @@ extends Node2D
 		base_texture = value
 		$Sprite2D.texture = value
 
-@onready var _sprite_2D : Sprite2D = $Sprite2D
+enum ElementColor {
+	RED,
+	YELLOW,
+	BLUE,
+	PINK,
+}
+@export var color: ElementColor 
 
+enum ElementType {
+	EYE,
+	MOUTH, 
+	HORN, 
+	ACCESSORY, 
+	HAIR, 
+}
+@export var element_types: Array[ElementType] = []
+
+
+
+@onready var _sprite_2D : Sprite2D = $Sprite2D
 
 #var left_click_just_pressed : bool
 enum MaskElementState {
@@ -22,9 +40,13 @@ var size : float = 1
 func _ready() -> void:
 	pass
 
+func init_element(_param: MaskElementParam):
+	base_texture = _param.base_texture
+	color = _param.color
+
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	
 	#$Sprite2D.texture = base_texture
 	
 	match state:

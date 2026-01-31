@@ -12,7 +12,7 @@ func _ready() -> void:
 	_sprite.texture = base_texture
 
 func _process(delta: float) -> void:
-	print(_elements.size())
+	pass
 
 func add_element(_element: MaskElement):
 	_elements.append(_element)
@@ -35,7 +35,8 @@ func show_mask():
 
 func reset_mask():
 	for e in _elements:
-		e.destroy_self()
+		if e:
+			e.destroy_self()
 
 	_elements = []
 	print("Waow, tu as reset le masque !")
@@ -77,3 +78,10 @@ func _on_main_reset_masque() -> void:
 
 func _on_main_undo_masque() -> void:
 	undo()
+
+
+func _condition_at_least_one(cond: Callable):
+	for e in _elements:
+		if cond.call(e):
+			return true
+	return false

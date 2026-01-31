@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://dpnfnhfn5f0y7"]
+
+[ext_resource type="Script" uid="uid://dpqm20myfe0s8" path="res://scenes/mask_checker.gd" id="1_rabqn"]
+
+[node name="MaskChecker" type="Node2D" unique_id=1741428356]
+script = ExtResource("1_rabqn")
