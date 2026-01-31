@@ -44,4 +44,8 @@ func _on_main_cacher_masque() -> void:
 	show_mask()
 	
 func _on_main_reset_masque() -> void:
+	reset_mask()
+
+
+func _on_main_undo_masque() -> void:
 	undo()

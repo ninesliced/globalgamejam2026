@@ -16,14 +16,20 @@ script = ExtResource("1_gwk6t")
 
 [node name="UndoContainer" type="MarginContainer" parent="." unique_id=822278533]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 262.0
+offset_bottom = 140.0
 theme_override_constants/margin_left = 20
 theme_override_constants/margin_top = 20
 theme_override_constants/margin_right = 20
 theme_override_constants/margin_bottom = 20
 
 [node name="UndoButton" type="Button" parent="UndoContainer" unique_id=1510526620]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+
+[node name="ResetButton" type="Button" parent="UndoContainer" unique_id=1735923866]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 size_flags_horizontal = 0
@@ -1011,4 +1017,5 @@ script = ExtResource("2_xjfbv")
 
 [connection signal="desactive" from="." to="ElementView/MarginContainer/VBoxContainer/DoneButton" method="_on_game_ui_desactive"]
 [connection signal="pressed" from="UndoContainer/UndoButton" to="." method="_on_undo_button_pressed"]
+[connection signal="pressed" from="UndoContainer/ResetButton" to="." method="_on_reset_button_pressed"]
 [connection signal="pressed" from="ElementView/MarginContainer/VBoxContainer/DoneButton" to="." method="_on_done_button_pressed"]
