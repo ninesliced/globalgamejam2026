@@ -15,6 +15,8 @@ func _process(delta: float) -> void:
 	pass
 
 func add_element(_element: MaskElement):
+	if not _element:
+		return
 	_elements.append(_element)
 	_element.reparent(self)
 
