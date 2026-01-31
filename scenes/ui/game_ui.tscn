@@ -165,16 +165,6 @@ layout_mode = 2
 text = "FINI !"
 script = ExtResource("2_xjfbv")
 
-[node name="DemandeContainer" type="TextEdit" parent="." unique_id=2013790696]
-layout_mode = 0
-offset_left = -1.0
-offset_top = 944.0
-offset_right = 1200.0
-offset_bottom = 1080.0
-placeholder_text = "Y'a pas de texte frer"
-script = ExtResource("5_ru5ln")
-
-[connection signal="demande_signal" from="." to="DemandeContainer" method="_on_game_ui_demande_signal"]
 [connection signal="desactive" from="." to="ElementView/MarginContainer/VBoxContainer/DoneButton" method="_on_game_ui_desactive"]
 [connection signal="pressed" from="UndoContainer/UndoButton" to="." method="_on_undo_button_pressed"]
 [connection signal="pressed" from="UndoContainer/ResetButton" to="." method="_on_reset_button_pressed"]
