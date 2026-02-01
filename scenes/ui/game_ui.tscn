@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://cghi3mqhadeqw" path="res://scenes/ui/game_ui.gd" id="1_gwk6t"]
 [ext_resource type="PackedScene" uid="uid://ctxqwufipbljy" path="res://scenes/ui/element_button.tscn" id="2_ru5ln"]
 [ext_resource type="Theme" uid="uid://iwvlxvhuhgou" path="res://ressources/theme.tres" id="2_x0n6o"]
-[ext_resource type="Script" path="res://scenes/ui/done_button.gd" id="2_xjfbv"]
+[ext_resource type="Script" uid="uid://jrwmfd36vlcf" path="res://scenes/ui/done_button.gd" id="2_xjfbv"]
 [ext_resource type="Texture2D" uid="uid://bqvskiqyfj2na" path="res://assets/sprites/Interface/asset_rectangle_background.png" id="3_oqj4c"]
 [ext_resource type="Texture2D" uid="uid://dp0rnx2bq4ehi" path="res://assets/sprites/masks/Mask_accessories/asset_mask_accessories_3eyes.png" id="3_v1bdg"]
 [ext_resource type="Texture2D" uid="uid://d2swplhq6t7jk" path="res://assets/sprites/masks/Mask_base/asset_mask_insect.png" id="4_5bpyr"]
@@ -12,7 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://dq2f0c0v03gs7" path="res://assets/sprites/masks/Mask_base/asset_mask_fish.png" id="4_pbku6"]
 [ext_resource type="Texture2D" uid="uid://hpjlbxfev3io" path="res://assets/sprites/masks/Mask_accessories/asset_mask_accessories_goateye_yellow.png" id="4_qrkc0"]
 [ext_resource type="Script" uid="uid://bu0cj2eyjrvn4" path="res://ressources/mask_element_param.gd" id="4_v1bdg"]
-[ext_resource type="Script" uid="uid://cm0jqbtasrhe1" path="res://ressources/mask_param.gd" id="5_20oq5"]
+[ext_resource type="Script" path="res://ressources/mask_param.gd" id="5_20oq5"]
 [ext_resource type="Texture2D" uid="uid://vtursprimdlv" path="res://assets/sprites/masks/Mask_accessories/asset_mask_accessories_eye_only.png" id="5_yvtb5"]
 [ext_resource type="Texture2D" uid="uid://r6ysr0jmph57" path="res://assets/sprites/masks/Mask_base/asset_mask_basic.png" id="6_plh64"]
 [ext_resource type="Texture2D" uid="uid://3yctxi7r7qpi" path="res://assets/sprites/masks/Mask_accessories/asset_mask_accessories_eyes_redd.png" id="7_bxde6"]
@@ -293,7 +293,6 @@ autowrap_mode = 3
 script = ExtResource("9_k7elv")
 
 [node name="StartScreen" type="PanelContainer" parent="." unique_id=2110677133]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
