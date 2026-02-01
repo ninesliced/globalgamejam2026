@@ -15,17 +15,15 @@ signal modif_score(score : int)
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	MaskManager.current_mask = $Mask
-
+	generate_new_condition()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
+	print("erzre ", mask_checker.text)
 
 
 func _on_game_ui_done_pressed() -> void:
 	cacher_masque.emit()
-	var success = mask_checker.check(null, MaskManager.current_mask)
-	print("success ", success)
 
 
 func _on_game_ui_undo_pressed() -> void:
@@ -47,3 +45,15 @@ func _on_game_ui_commencer() -> void:
 
 func assign_dialog_text(text: String):
 	game_ui.assign_dialog_text(text)
+
+
+func _on_mask_signal_evaluer_masque() -> void:
+	var success = mask_checker.check(mask)
+	# ALEX 
+
+func _on_mask_signal_nouvelles_demandes() -> void:
+	generate_new_condition()
+
+func generate_new_condition():
+	mask_checker.generate()
+	assign_dialog_text(mask_checker.text)

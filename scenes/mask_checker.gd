@@ -6,6 +6,9 @@ var min_number_of_conditions = 1
 var max_number_of_conditions = 1
 
 func _ready():
+	generate()
+
+func generate():
 	conditions = generate_new_conditions()
 	text = get_condition_text()
 
@@ -34,10 +37,9 @@ func get_condition_text():
 	return s
 
 
-func check(_conditions, _mask: Mask) -> bool:
-	_conditions = conditions
+func check(_mask: Mask) -> bool:
 	for cond in conditions:
-		var c = cond.check(_mask, _conditions)
+		var c = cond.check(_mask, conditions)
 		if not c:
 			return false
 	
