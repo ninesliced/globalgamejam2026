@@ -6,7 +6,6 @@ extends Button
 
 var _mask_element_scene = load("res://scenes/game/MaskElement.tscn")
 
-var _time = 0.0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -14,6 +13,7 @@ func _ready() -> void:
 	_mask_element.base_texture = _element_param.base_texture
 
 
+var _time = 0.0
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	_time += delta
