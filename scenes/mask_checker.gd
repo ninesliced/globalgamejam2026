@@ -30,6 +30,8 @@ func generate_new_conditions():
 				_conditions.append(ConditionDiantre.new())
 			3: 
 				_conditions.append(ConditionMeteo.new())
+			4:
+				_conditions.append(ConditionMechant.new())
 	
 	return _conditions
 
