@@ -14,4 +14,4 @@ func check(_mask: Mask, _conditions):
 			if lettre == "l" or lettre == "L" :
 				nbr_l += 1
 	var nbr_bouche = _mask.count_with_type(MaskElement.ElementType.MOUTH)
-	return nbr_bouche >= 5 or nbr_bouche == nbr_l
+	return (nbr_l > 5 and nbr_bouche >= 5) or nbr_bouche == nbr_l
