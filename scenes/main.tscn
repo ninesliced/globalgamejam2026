@@ -14,7 +14,7 @@
 shader = ExtResource("2_tipki")
 shader_parameter/NOISE_PATTERN = ExtResource("3_85g3d")
 shader_parameter/scroll_speed = 0.05
-shader_parameter/deform_intesity = 0.03
+shader_parameter/deform_intesity = 0.01
 
 [node name="Main" type="Node2D" unique_id=1239285722]
 script = ExtResource("1_sugp2")
