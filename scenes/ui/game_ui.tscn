@@ -24,6 +24,7 @@
 [ext_resource type="Script" uid="uid://drer27ykqjrre" path="res://scenes/ui/start_screen.gd" id="10_crnce"]
 [ext_resource type="Script" uid="uid://d28dio67ttnk5" path="res://scenes/ui/button.gd" id="11_bxde6"]
 [ext_resource type="Script" uid="uid://miiyvlc53t55" path="res://scenes/ui/temps.gd" id="17_pbku6"]
+[ext_resource type="Script" uid="uid://ba37s3od3xs1w" path="res://scenes/ui/score.gd" id="25_t1jn2"]
 
 [sub_resource type="Resource" id="Resource_t1jn2"]
 script = ExtResource("5_20oq5")
@@ -346,6 +347,7 @@ layout_mode = 2
 size_flags_horizontal = 8
 theme_override_font_sizes/font_size = 32
 text = "SCORE : 1005481"
+script = ExtResource("25_t1jn2")
 
 [connection signal="afficher_score" from="." to="StartScreen" method="_on_game_ui_afficher_score"]
 [connection signal="afficher_score" from="." to="StartScreen/VBoxContainer/ScoreContainer" method="_on_game_ui_afficher_score"]
@@ -355,6 +357,7 @@ text = "SCORE : 1005481"
 [connection signal="cacher_score" from="." to="StartScreen/VBoxContainer/Button" method="_on_game_ui_cacher_score"]
 [connection signal="demande_signal" from="." to="DemandeContainer/DemandeLabel" method="_on_game_ui_demande_signal"]
 [connection signal="desactive" from="." to="ElementView/MarginContainer/VBoxContainer/DoneButton" method="_on_game_ui_desactive"]
+[connection signal="modif_score" from="." to="TempsScoreContainer/Score" method="_on_game_ui_modif_score"]
 [connection signal="modif_temps" from="." to="TempsScoreContainer/Temps" method="_on_game_ui_modif_temps"]
 [connection signal="pressed" from="UndoContainer/UndoButton" to="." method="_on_undo_button_pressed"]
 [connection signal="pressed" from="UndoContainer/ResetButton" to="." method="_on_reset_button_pressed"]

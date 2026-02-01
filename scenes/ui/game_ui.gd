@@ -9,6 +9,7 @@ signal afficher_score(score : int)
 signal cacher_score()
 signal commencer()
 signal modif_temps(temps : int)
+signal modif_score(score : int)
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -51,3 +52,7 @@ func _on_button_pressed() -> void:
 
 func _on_timer_temps(temps_ecoule: int) -> void:
 	modif_temps.emit(180 - temps_ecoule)
+
+
+func _on_main_modif_score(score: int) -> void:
+	modif_score.emit(score)

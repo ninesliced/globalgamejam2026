@@ -53,6 +53,7 @@ script = ExtResource("6_tefeu")
 [connection signal="cacher_masque" from="." to="Mask" method="_on_main_cacher_masque"]
 [connection signal="cacher_score" from="." to="GameUI" method="_on_main_cacher_score"]
 [connection signal="demarrer_timer" from="." to="Timer" method="_on_main_demarrer_timer"]
+[connection signal="modif_score" from="." to="GameUI" method="_on_main_modif_score"]
 [connection signal="reset_masque" from="." to="Mask" method="_on_main_reset_masque"]
 [connection signal="undo_masque" from="." to="Mask" method="_on_main_undo_masque"]
 [connection signal="commencer" from="GameUI" to="." method="_on_game_ui_commencer"]
