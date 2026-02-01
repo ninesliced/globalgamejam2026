@@ -26,6 +26,8 @@ func generate_new_conditions():
 				_conditions.append(ConditionArchiduchesse.new())
 			1: 
 				_conditions.append(ConditionJeMeSens.new())
+			2: 
+				_conditions.append(ConditionDiantre.new())
 	
 	return _conditions
 
