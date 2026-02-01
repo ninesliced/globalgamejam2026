@@ -14,8 +14,11 @@
 [ext_resource type="Texture2D" uid="uid://hpjlbxfev3io" path="res://assets/sprites/masks/Mask_accessories/asset_mask_accessories_goateye_yellow.png" id="4_qrkc0"]
 [ext_resource type="Script" uid="uid://bu0cj2eyjrvn4" path="res://ressources/mask_element_param.gd" id="4_v1bdg"]
 [ext_resource type="Script" path="res://ressources/mask_param.gd" id="5_20oq5"]
+[ext_resource type="Texture2D" uid="uid://bqh8plism7prq" path="res://assets/sprites/Interface/asset_bouton_reset.png" id="5_64n7i"]
 [ext_resource type="Texture2D" uid="uid://vtursprimdlv" path="res://assets/sprites/masks/Mask_accessories/asset_mask_accessories_eye_only.png" id="5_yvtb5"]
+[ext_resource type="Script" uid="uid://cpjbbtmyawoiq" path="res://scenes/ui/reset_button.gd" id="6_8nfjr"]
 [ext_resource type="Texture2D" uid="uid://r6ysr0jmph57" path="res://assets/sprites/masks/Mask_base/asset_mask_basic.png" id="6_plh64"]
+[ext_resource type="Texture2D" uid="uid://cwtb7gqjugn4g" path="res://assets/sprites/Interface/asset_bouton_undo.png" id="6_r1cyd"]
 [ext_resource type="Texture2D" uid="uid://3yctxi7r7qpi" path="res://assets/sprites/masks/Mask_accessories/asset_mask_accessories_eyes_redd.png" id="7_bxde6"]
 [ext_resource type="Texture2D" uid="uid://djyg2cmpe82wv" path="res://assets/sprites/Interface/asset_bouton_fini.png" id="9_aq72h"]
 [ext_resource type="Script" uid="uid://dkmaup7nq7hsn" path="res://scenes/ui/score_container.gd" id="9_fftnl"]
@@ -31,6 +34,11 @@
 [ext_resource type="Texture2D" uid="uid://cs3c3ev50431y" path="res://assets/sprites/masks/Mask_accessories/asset_mask_accessories_moustache.png" id="21_6ui8f"]
 [ext_resource type="Texture2D" uid="uid://bbjda12kjpmy3" path="res://assets/sprites/masks/Mask_accessories/asset_mask_accessories_mouth4.png" id="22_r1cyd"]
 [ext_resource type="Script" path="res://scenes/ui/score.gd" id="25_t1jn2"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_64n7i"]
+font_size = 44
+outline_size = 33
+outline_color = Color(0.1254902, 0.08627451, 0.44313726, 1)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_i3ans"]
 shader = ExtResource("3_i3ans")
@@ -138,6 +146,35 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_gwk6t")
 
+[node name="TempsScoreContainer" type="MarginContainer" parent="." unique_id=1396241773]
+custom_minimum_size = Vector2(0, 120)
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 4.0
+offset_right = -714.0
+offset_bottom = 120.0
+grow_horizontal = 2
+
+[node name="Temps" type="Label" parent="TempsScoreContainer" unique_id=208846798]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("2_x0n6o")
+theme_override_font_sizes/font_size = 32
+text = "180 s"
+label_settings = SubResource("LabelSettings_64n7i")
+horizontal_alignment = 1
+script = ExtResource("17_pbku6")
+
+[node name="Score" type="Label" parent="TempsScoreContainer" unique_id=1205780846]
+layout_mode = 2
+size_flags_horizontal = 8
+theme = ExtResource("2_x0n6o")
+theme_override_font_sizes/font_size = 32
+text = "SCORE : 1005481"
+script = ExtResource("25_t1jn2")
+
 [node name="UndoContainer" type="MarginContainer" parent="." unique_id=822278533]
 layout_mode = 0
 offset_right = 262.0
@@ -147,21 +184,25 @@ theme_override_constants/margin_top = 20
 theme_override_constants/margin_right = 20
 theme_override_constants/margin_bottom = 20
 
-[node name="UndoButton" type="Button" parent="UndoContainer" unique_id=1510526620]
-custom_minimum_size = Vector2(100, 100)
-layout_mode = 2
-size_flags_horizontal = 8
-size_flags_vertical = 0
-theme = ExtResource("2_x0n6o")
-text = "UNDO"
-
 [node name="ResetButton" type="Button" parent="UndoContainer" unique_id=1735923866]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
 theme = ExtResource("2_x0n6o")
-text = "RESET"
+icon = ExtResource("5_64n7i")
+icon_alignment = 1
+script = ExtResource("6_8nfjr")
+
+[node name="UndoButton" type="Button" parent="UndoContainer" unique_id=1510526620]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+theme = ExtResource("2_x0n6o")
+icon = ExtResource("6_r1cyd")
+icon_alignment = 1
+script = ExtResource("6_8nfjr")
 
 [node name="ElementView" type="Control" parent="." unique_id=1802929158]
 custom_minimum_size = Vector2(720, 0)
@@ -212,10 +253,9 @@ theme = ExtResource("2_x0n6o")
 theme_override_constants/side_margin = 8
 theme_override_constants/tab_separation = 8
 theme_override_constants/icon_separation = 4
-current_tab = 2
+current_tab = 0
 
 [node name="Masques" type="ScrollContainer" parent="ElementView/MarginContainer/VBoxContainer/TabContainer" unique_id=762613215]
-visible = false
 layout_mode = 2
 size_flags_vertical = 3
 metadata/_tab_index = 0
@@ -293,6 +333,7 @@ layout_mode = 2
 _element_param = SubResource("Resource_fftnl")
 
 [node name="Bouches" type="ScrollContainer" parent="ElementView/MarginContainer/VBoxContainer/TabContainer" unique_id=1876711944]
+visible = false
 layout_mode = 2
 size_flags_vertical = 3
 metadata/_tab_index = 2
@@ -358,6 +399,7 @@ size_flags_vertical = 4
 color = Color(0.2353, 0.117, 0.39, 0.34509805)
 
 [node name="DemandeLabel" type="Label" parent="DemandeContainer" unique_id=1741558299]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(900, 0)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -406,29 +448,6 @@ layout_mode = 2
 text = "NOUVELLE PARTIE"
 script = ExtResource("11_bxde6")
 
-[node name="TempsScoreContainer" type="MarginContainer" parent="." unique_id=1396241773]
-layout_mode = 0
-offset_left = 497.0
-offset_top = 10.0
-offset_right = 1177.0
-offset_bottom = 80.0
-
-[node name="Temps" type="Label" parent="TempsScoreContainer" unique_id=208846798]
-layout_mode = 2
-size_flags_horizontal = 0
-theme = ExtResource("2_x0n6o")
-theme_override_font_sizes/font_size = 32
-text = "TEMPS : 180 s"
-script = ExtResource("17_pbku6")
-
-[node name="Score" type="Label" parent="TempsScoreContainer" unique_id=1205780846]
-layout_mode = 2
-size_flags_horizontal = 8
-theme = ExtResource("2_x0n6o")
-theme_override_font_sizes/font_size = 32
-text = "SCORE : 1005481"
-script = ExtResource("25_t1jn2")
-
 [connection signal="afficher_score" from="." to="StartScreen" method="_on_game_ui_afficher_score"]
 [connection signal="afficher_score" from="." to="StartScreen/VBoxContainer/ScoreContainer" method="_on_game_ui_afficher_score"]
 [connection signal="afficher_score" from="." to="StartScreen/VBoxContainer/Button" method="_on_game_ui_afficher_score"]
@@ -439,8 +458,8 @@ script = ExtResource("25_t1jn2")
 [connection signal="desactive" from="." to="ElementView/MarginContainer/VBoxContainer/DoneButton" method="_on_game_ui_desactive"]
 [connection signal="modif_score" from="." to="TempsScoreContainer/Score" method="_on_game_ui_modif_score"]
 [connection signal="modif_temps" from="." to="TempsScoreContainer/Temps" method="_on_game_ui_modif_temps"]
-[connection signal="pressed" from="UndoContainer/UndoButton" to="." method="_on_undo_button_pressed"]
 [connection signal="pressed" from="UndoContainer/ResetButton" to="." method="_on_reset_button_pressed"]
+[connection signal="pressed" from="UndoContainer/UndoButton" to="." method="_on_undo_button_pressed"]
 [connection signal="pressed" from="ElementView/MarginContainer/VBoxContainer/DoneButton" to="." method="_on_done_button_pressed"]
 [connection signal="score_affiche" from="StartScreen/VBoxContainer/ScoreContainer" to="StartScreen/VBoxContainer/ScoreContainer/Label" method="_on_score_container_score_affiche"]
 [connection signal="pressed" from="StartScreen/VBoxContainer/Button" to="." method="_on_button_pressed"]

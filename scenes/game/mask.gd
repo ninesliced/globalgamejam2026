@@ -3,7 +3,8 @@ extends Node2D
 
 @onready var _sprite: Sprite2D = $Sprite2D
 
-
+signal signal_nouvelles_demandes()
+signal signal_evaluer_masque()
 
 var type : MaskParams.MaskType
 
@@ -67,14 +68,11 @@ func reset_mask():
 			e.destroy_self()
 	_elements = []
 
-func alea_demande():
-	pass
-
 func nouvelles_demandes():
-	pass
+	signal_nouvelles_demandes.emit()
 
 func evaluer_masque():
-	pass
+	signal_evaluer_masque.emit()
 	# Couleur
 	# Yeux
 	# Bouche
