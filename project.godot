@@ -27,6 +27,7 @@ Globals="*res://globals/global.gd"
 Signalbus="*res://globals/signalbus.gd"
 GlobalMaskElement="*uid://ctw1pqs4varjb"
 MaskManager="*uid://bxsltxlfdstgu"
+TransitionManager="*uid://kvf06xb5r4o0"
 
 [display]
 
