@@ -40,10 +40,12 @@ func get_condition_text():
 
 
 func check(_mask: Mask) -> int:
+	print("check")
 	var resultat = 0
 	for cond in conditions:
 		var c = cond.check(_mask, conditions)
 		if not c:
 			resultat = resultat + 25
+			print("condition bonne")
 	
 	return true
