@@ -21,6 +21,8 @@ func generate_new_conditions():
 		match r:
 			0:
 				_conditions.append(ConditionArchiduchesse.new())
+			1: 
+				_conditions.append(ConditionJeMeSens.new())
 	
 	return _conditions
 
