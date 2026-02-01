@@ -293,6 +293,7 @@ autowrap_mode = 3
 script = ExtResource("9_k7elv")
 
 [node name="StartScreen" type="PanelContainer" parent="." unique_id=2110677133]
+z_index = 1
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
