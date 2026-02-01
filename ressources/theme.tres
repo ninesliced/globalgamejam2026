@@ -25,6 +25,6 @@ Button/styles/hover = SubResource("StyleBoxTexture_jb3ky")
 Button/styles/normal = SubResource("StyleBoxTexture_cgoy4")
 Button/styles/pressed = SubResource("StyleBoxTexture_cgoy4")
 Label/fonts/font = ExtResource("2_cgoy4")
-TabContainer/font_sizes/font_size = 26
+TabContainer/font_sizes/font_size = 22
 TabContainer/fonts/font = ExtResource("2_cgoy4")
 TabContainer/styles/panel = SubResource("StyleBoxFlat_cgoy4")
