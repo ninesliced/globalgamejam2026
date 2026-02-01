@@ -20,7 +20,7 @@ enum ElementType {
 	HORN, 
 	ACCESSORY, 
 	HAIR, 
-	NOSE
+	NOSE,
 }
 @export var element_types: Array[ElementType] = []
 

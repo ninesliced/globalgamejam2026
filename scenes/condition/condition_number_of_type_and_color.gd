@@ -21,4 +21,5 @@ func get_text():
 	return 
 
 func check(_mask: Mask, _conditions):
+	print("check nb couleur")
 	return _mask.count_with_color_and_type(color, typ) >= 1

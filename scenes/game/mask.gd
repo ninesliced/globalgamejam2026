@@ -84,12 +84,11 @@ func evaluer_masque():
 
 func _on_main_cacher_masque() -> void:
 	hide_mask()
-	await get_tree().create_timer(1).timeout
+	await get_tree().create_timer(0.5).timeout
 	evaluer_masque()
-	await get_tree().create_timer(1).timeout
 	reset_mask()
 	nouvelles_demandes()
-	await get_tree().create_timer(1).timeout
+	await get_tree().create_timer(0.5).timeout
 	show_mask()
 
 

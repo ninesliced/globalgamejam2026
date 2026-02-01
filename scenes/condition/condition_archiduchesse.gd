@@ -37,5 +37,6 @@ func get_text():
 	])
 
 func check(_mask: Mask, _conditions):
+	print("check nez")
 	var nb_nez = _mask.count_with_type(MaskElement.ElementType.NOSE)
 	return (1 + score1 - score2) == nb_nez

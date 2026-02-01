@@ -21,8 +21,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	print("erzre ", mask_checker.text)
-
+	pass
 
 func _on_game_ui_done_pressed() -> void:
 	cacher_masque.emit()
@@ -37,12 +36,13 @@ func _on_game_ui_reset_pressed() -> void:
 
 
 func _on_timer_timeout() -> void:
-	afficher_score.emit(100)
+	afficher_score.emit(score_total)
 
 
 func _on_game_ui_commencer() -> void:
 	cacher_score.emit()
 	demarrer_timer.emit()
+	score_total = 0
 
 
 func assign_dialog_text(text: String):
