@@ -1,22 +1,37 @@
 class_name Mask
 extends Node2D
 
-@export var base_texture: Texture2D
-
 @onready var _sprite: Sprite2D = $Sprite2D
+
+var has_mask : bool = false
+
+var type : MaskParams.MaskType
 
 var _elements: Array[MaskElement] = []
 
 
 func _ready() -> void:
-	_sprite.texture = base_texture
+	pass
 
 func _process(delta: float) -> void:
 	pass
 
+func update_mask(base_texture, _type) :
+	if not has_mask :
+		has_mask = true
+		
+	print("J'ai un masque")
+	_sprite.texture = base_texture
+	type = _type
+	
+
 func add_element(_element: MaskElement):
 	if not _element:
 		return
+		
+	if not has_mask :
+		return
+		
 	_elements.append(_element)
 	var p = Vector2(_element.global_position)
 	_element.reparent(self)
@@ -40,6 +55,9 @@ func show_mask():
 	tween.tween_property(self, "position", Vector2(600, 540), 1.0)
 
 func reset_mask():
+	if not has_mask :
+		return
+	
 	for e in _elements:
 		if e:
 			e.destroy_self()

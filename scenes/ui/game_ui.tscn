@@ -2,20 +2,56 @@
 
 [ext_resource type="Script" uid="uid://cghi3mqhadeqw" path="res://scenes/ui/game_ui.gd" id="1_gwk6t"]
 [ext_resource type="PackedScene" uid="uid://ctxqwufipbljy" path="res://scenes/ui/element_button.tscn" id="2_ru5ln"]
-[ext_resource type="Theme" uid="uid://lju153lt28i2" path="res://ressources/theme.tres" id="2_x0n6o"]
-[ext_resource type="Script" uid="uid://jrwmfd36vlcf" path="res://scenes/ui/done_button.gd" id="2_xjfbv"]
+[ext_resource type="Theme" uid="uid://iwvlxvhuhgou" path="res://ressources/theme.tres" id="2_x0n6o"]
+[ext_resource type="Script" path="res://scenes/ui/done_button.gd" id="2_xjfbv"]
 [ext_resource type="Texture2D" uid="uid://bqvskiqyfj2na" path="res://assets/sprites/Interface/asset_rectangle_background.png" id="3_oqj4c"]
 [ext_resource type="Texture2D" uid="uid://dp0rnx2bq4ehi" path="res://assets/sprites/masks/Mask_accessories/asset_mask_accessories_3eyes.png" id="3_v1bdg"]
+[ext_resource type="Texture2D" uid="uid://d2swplhq6t7jk" path="res://assets/sprites/masks/Mask_base/asset_mask_insect.png" id="4_5bpyr"]
+[ext_resource type="PackedScene" uid="uid://bd2r1paj31rac" path="res://scenes/ui/mask_button.tscn" id="4_baxkn"]
+[ext_resource type="Texture2D" uid="uid://c0s6dhiauxaam" path="res://assets/sprites/masks/Mask_base/asset_mask_star.png" id="4_i3ans"]
+[ext_resource type="Texture2D" uid="uid://dq2f0c0v03gs7" path="res://assets/sprites/masks/Mask_base/asset_mask_fish.png" id="4_pbku6"]
 [ext_resource type="Texture2D" uid="uid://hpjlbxfev3io" path="res://assets/sprites/masks/Mask_accessories/asset_mask_accessories_goateye_yellow.png" id="4_qrkc0"]
 [ext_resource type="Script" uid="uid://bu0cj2eyjrvn4" path="res://ressources/mask_element_param.gd" id="4_v1bdg"]
+[ext_resource type="Script" uid="uid://cm0jqbtasrhe1" path="res://ressources/mask_param.gd" id="5_20oq5"]
 [ext_resource type="Texture2D" uid="uid://vtursprimdlv" path="res://assets/sprites/masks/Mask_accessories/asset_mask_accessories_eye_only.png" id="5_yvtb5"]
+[ext_resource type="Texture2D" uid="uid://r6ysr0jmph57" path="res://assets/sprites/masks/Mask_base/asset_mask_basic.png" id="6_plh64"]
 [ext_resource type="Texture2D" uid="uid://3yctxi7r7qpi" path="res://assets/sprites/masks/Mask_accessories/asset_mask_accessories_eyes_redd.png" id="7_bxde6"]
 [ext_resource type="Texture2D" uid="uid://djyg2cmpe82wv" path="res://assets/sprites/Interface/asset_bouton_fini.png" id="9_aq72h"]
 [ext_resource type="Script" uid="uid://dkmaup7nq7hsn" path="res://scenes/ui/score_container.gd" id="9_fftnl"]
 [ext_resource type="Script" uid="uid://tw16esbo0he7" path="res://scenes/ui/demande_label.gd" id="9_k7elv"]
+[ext_resource type="Texture2D" uid="uid://bhmf1cvg4armb" path="res://assets/sprites/masks/Mask_base/asset_mask_potato.png" id="10_20oq5"]
 [ext_resource type="Script" uid="uid://b2ggnfubsbepm" path="res://scenes/ui/label.gd" id="10_bxde6"]
 [ext_resource type="Script" uid="uid://drer27ykqjrre" path="res://scenes/ui/start_screen.gd" id="10_crnce"]
 [ext_resource type="Script" uid="uid://d28dio67ttnk5" path="res://scenes/ui/button.gd" id="11_bxde6"]
+
+[sub_resource type="Resource" id="Resource_t1jn2"]
+script = ExtResource("5_20oq5")
+texture_base = ExtResource("6_plh64")
+type = 1
+metadata/_custom_type_script = "uid://cm0jqbtasrhe1"
+
+[sub_resource type="Resource" id="Resource_4oucs"]
+script = ExtResource("5_20oq5")
+texture_base = ExtResource("4_pbku6")
+type = 2
+metadata/_custom_type_script = "uid://cm0jqbtasrhe1"
+
+[sub_resource type="Resource" id="Resource_03x2p"]
+script = ExtResource("5_20oq5")
+texture_base = ExtResource("4_5bpyr")
+type = 3
+metadata/_custom_type_script = "uid://cm0jqbtasrhe1"
+
+[sub_resource type="Resource" id="Resource_gv6bi"]
+script = ExtResource("5_20oq5")
+texture_base = ExtResource("4_i3ans")
+metadata/_custom_type_script = "uid://cm0jqbtasrhe1"
+
+[sub_resource type="Resource" id="Resource_plh64"]
+script = ExtResource("5_20oq5")
+texture_base = ExtResource("10_20oq5")
+type = 4
+metadata/_custom_type_script = "uid://cm0jqbtasrhe1"
 
 [sub_resource type="Resource" id="Resource_v1bdg"]
 script = ExtResource("4_v1bdg")
@@ -159,20 +195,44 @@ theme_override_constants/h_separation = 8
 theme_override_constants/v_separation = 8
 columns = 6
 
+[node name="ClasicMask" parent="ElementView/MarginContainer/VBoxContainer/TabContainer/ScrollContainer/MarginContainer/GridContainer" unique_id=1178295792 instance=ExtResource("4_baxkn")]
+layout_mode = 2
+params = SubResource("Resource_t1jn2")
+
+[node name="FihMask" parent="ElementView/MarginContainer/VBoxContainer/TabContainer/ScrollContainer/MarginContainer/GridContainer" unique_id=1027358984 instance=ExtResource("4_baxkn")]
+layout_mode = 2
+params = SubResource("Resource_4oucs")
+
+[node name="HornetMask" parent="ElementView/MarginContainer/VBoxContainer/TabContainer/ScrollContainer/MarginContainer/GridContainer" unique_id=467734059 instance=ExtResource("4_baxkn")]
+layout_mode = 2
+params = SubResource("Resource_03x2p")
+
+[node name="Etoiules" parent="ElementView/MarginContainer/VBoxContainer/TabContainer/ScrollContainer/MarginContainer/GridContainer" unique_id=247723230 instance=ExtResource("4_baxkn")]
+layout_mode = 2
+params = SubResource("Resource_gv6bi")
+
+[node name="brotato" parent="ElementView/MarginContainer/VBoxContainer/TabContainer/ScrollContainer/MarginContainer/GridContainer" unique_id=2125207716 instance=ExtResource("4_baxkn")]
+layout_mode = 2
+params = SubResource("Resource_plh64")
+
 [node name="MaskElementUI" parent="ElementView/MarginContainer/VBoxContainer/TabContainer/ScrollContainer/MarginContainer/GridContainer" unique_id=535153327 instance=ExtResource("2_ru5ln")]
 layout_mode = 2
+theme = null
 _element_param = SubResource("Resource_v1bdg")
 
 [node name="MaskElementUI2" parent="ElementView/MarginContainer/VBoxContainer/TabContainer/ScrollContainer/MarginContainer/GridContainer" unique_id=2040810180 instance=ExtResource("2_ru5ln")]
 layout_mode = 2
+theme = null
 _element_param = SubResource("Resource_qrkc0")
 
 [node name="MaskElementUI3" parent="ElementView/MarginContainer/VBoxContainer/TabContainer/ScrollContainer/MarginContainer/GridContainer" unique_id=481115001 instance=ExtResource("2_ru5ln")]
 layout_mode = 2
+theme = null
 _element_param = SubResource("Resource_yvtb5")
 
 [node name="MaskElementUI4" parent="ElementView/MarginContainer/VBoxContainer/TabContainer/ScrollContainer/MarginContainer/GridContainer" unique_id=925392032 instance=ExtResource("2_ru5ln")]
 layout_mode = 2
+theme = null
 _element_param = SubResource("Resource_fftnl")
 
 [node name="ScrollContainer2" type="ScrollContainer" parent="ElementView/MarginContainer/VBoxContainer/TabContainer" unique_id=253361562]
