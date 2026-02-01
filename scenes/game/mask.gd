@@ -18,7 +18,9 @@ func add_element(_element: MaskElement):
 	if not _element:
 		return
 	_elements.append(_element)
+	var p = Vector2(_element.global_position)
 	_element.reparent(self)
+	_element.global_position = p
 
 func remove_last_element():
 	if _elements.is_empty():
@@ -56,7 +58,6 @@ func evaluer_masque():
 	# Oreilles
 	# Cornes/Décorations
 	# Reste
-	
 
 
 # Réactions aux signaux

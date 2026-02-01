@@ -10,12 +10,3 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
-
-
-func _on_game_ui_afficher_score(score : int) -> void:
-	score_affiche.emit(score)
-	visible = true
-
-
-func _on_game_ui_cacher_score() -> void:
-	visible = false

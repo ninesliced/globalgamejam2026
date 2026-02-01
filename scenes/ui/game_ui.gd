@@ -43,5 +43,6 @@ func _on_main_cacher_score() -> void:
 	cacher_score.emit()
 
 
+# on start_button_pressed
 func _on_button_pressed() -> void:
 	commencer.emit()
