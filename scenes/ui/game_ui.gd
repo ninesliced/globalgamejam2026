@@ -10,6 +10,7 @@ signal cacher_score()
 signal commencer()
 signal modif_temps(temps : int)
 signal modif_score(score : int)
+signal faire_bruitage(son : String)
 
 @onready var demande_label = %DemandeLabel
 
@@ -59,3 +60,7 @@ func _on_main_modif_score(score: int) -> void:
 
 func assign_dialog_text(text: String):
 	demande_label.text = text
+
+
+func _on_label_bruitage(son: String) -> void:
+	faire_bruitage.emit(son)

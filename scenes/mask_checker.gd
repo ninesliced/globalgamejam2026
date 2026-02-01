@@ -1,5 +1,7 @@
 extends Node2D
 
+signal joue_son(nom : String)
+
 var conditions = []
 var text = ""
 var min_number_of_conditions = 1
@@ -46,10 +48,24 @@ func get_condition_text():
 	return s
 
 
+func feedback_audio(score : int):
+	if score < 25:
+		joue_son.emit("res://assets/sounds/foirade.mp3")
+	elif score < 75:
+		joue_son.emit("res://assets/sounds/bien.mp3")
+	else:
+		joue_son.emit("res://assets/sounds/reussite.mp3")
+
+
 func check(_mask: Mask) -> int:
 	var resultat = 0
 	for cond in conditions:
 		var c = cond.check(_mask, conditions)
 		if c:
-			resultat = resultat + 25
+			resultat += 25
+		else:
+			resultat -= 10
+	
+	feedback_audio(resultat)
+	
 	return resultat
