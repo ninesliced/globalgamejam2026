@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://vtursprimdlv" path="res://assets/sprites/masks/Mask_accessories/asset_mask_accessories_eye_only.png" id="5_yvtb5"]
 [ext_resource type="Texture2D" uid="uid://3yctxi7r7qpi" path="res://assets/sprites/masks/Mask_accessories/asset_mask_accessories_eyes_redd.png" id="7_bxde6"]
 [ext_resource type="Script" uid="uid://dkmaup7nq7hsn" path="res://scenes/ui/score_container.gd" id="9_fftnl"]
-[ext_resource type="Script" path="res://scenes/ui/demande_label.gd" id="9_k7elv"]
+[ext_resource type="Script" uid="uid://tw16esbo0he7" path="res://scenes/ui/demande_label.gd" id="9_k7elv"]
 [ext_resource type="Script" uid="uid://b2ggnfubsbepm" path="res://scenes/ui/label.gd" id="10_bxde6"]
 [ext_resource type="Script" uid="uid://drer27ykqjrre" path="res://scenes/ui/start_screen.gd" id="10_crnce"]
 [ext_resource type="Script" uid="uid://d28dio67ttnk5" path="res://scenes/ui/button.gd" id="11_bxde6"]
@@ -192,7 +192,7 @@ script = ExtResource("2_xjfbv")
 layout_mode = 0
 offset_left = -1.0
 offset_top = 930.0
-offset_right = 1199.0
+offset_right = 1202.0
 offset_bottom = 1080.0
 script = SubResource("GDScript_yvtb5")
 
@@ -208,6 +208,7 @@ autowrap_mode = 3
 script = ExtResource("9_k7elv")
 
 [node name="StartScreen" type="PanelContainer" parent="." unique_id=2110677133]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -241,12 +242,31 @@ layout_mode = 2
 text = "NOUVELLE PARTIE"
 script = ExtResource("11_bxde6")
 
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1396241773]
+layout_mode = 0
+offset_left = 483.0
+offset_top = 10.0
+offset_right = 1163.0
+offset_bottom = 80.0
+
+[node name="Label" type="Label" parent="MarginContainer" unique_id=208846798]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_font_sizes/font_size = 32
+text = "TEMPS : 180.0 s"
+
+[node name="Label2" type="Label" parent="MarginContainer" unique_id=1205780846]
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_font_sizes/font_size = 32
+text = "SCORE : 1005481"
+
+[connection signal="afficher_score" from="." to="StartScreen" method="_on_game_ui_afficher_score"]
 [connection signal="afficher_score" from="." to="StartScreen/VBoxContainer/ScoreContainer" method="_on_game_ui_afficher_score"]
 [connection signal="afficher_score" from="." to="StartScreen/VBoxContainer/Button" method="_on_game_ui_afficher_score"]
-[connection signal="afficher_score" from="." to="StartScreen" method="_on_game_ui_afficher_score"]
+[connection signal="cacher_score" from="." to="StartScreen" method="_on_game_ui_cacher_score"]
 [connection signal="cacher_score" from="." to="StartScreen/VBoxContainer/ScoreContainer" method="_on_game_ui_cacher_score"]
 [connection signal="cacher_score" from="." to="StartScreen/VBoxContainer/Button" method="_on_game_ui_cacher_score"]
-[connection signal="cacher_score" from="." to="StartScreen" method="_on_game_ui_cacher_score"]
 [connection signal="demande_signal" from="." to="DemandeContainer/DemandeLabel" method="_on_game_ui_demande_signal"]
 [connection signal="desactive" from="." to="ElementView/MarginContainer/VBoxContainer/DoneButton" method="_on_game_ui_desactive"]
 [connection signal="pressed" from="UndoContainer/UndoButton" to="." method="_on_undo_button_pressed"]
