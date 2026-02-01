@@ -1,7 +1,7 @@
 class_name ConditionDiantre
 extends Condition
 
-var parties_vise = ["Oculus, Goutalus, Sentendus"]
+var parties_vise = ["Oculus", "Goutalus", "Sentendus"]
 var homonymes = ["verre", "ver", "vers", "vert"]
 
 var partie
