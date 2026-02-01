@@ -7,4 +7,8 @@ func _on_play_pressed() -> void:
 
 
 func _on_credits_pressed() -> void:
-	pass # Replace with function body.
+	var x: Sprite2D = $MenuCredits 
+	if x.visible:
+		x.hide()
+	else:
+		x.show()
