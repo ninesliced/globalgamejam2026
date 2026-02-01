@@ -3,7 +3,7 @@ extends Node2D
 var conditions = []
 var text = ""
 var min_number_of_conditions = 1
-var max_number_of_conditions = 1
+var max_number_of_conditions = 3
 
 func _ready():
 	generate()
@@ -14,7 +14,7 @@ func generate():
 
 func generate_new_conditions():
 	var _conditions = []
-	var possibilities = [0, 1, 2, 3]
+	var possibilities = [0, 1, 2, 3, 4, 5, 6]
 	var number_of_conditions = randi_range(min_number_of_conditions, max_number_of_conditions)
 	
 	for i in range(number_of_conditions):
@@ -30,7 +30,12 @@ func generate_new_conditions():
 				_conditions.append(ConditionDiantre.new())
 			3: 
 				_conditions.append(ConditionMeteo.new())
-	
+			4:
+				_conditions.append(ConditionMechant.new())
+			5:
+				_conditions.append(ConditionLivre.new())
+			6:
+				_conditions.append(ConditionBouche.new())
 	return _conditions
 
 
@@ -45,7 +50,6 @@ func check(_mask: Mask) -> int:
 	var resultat = 0
 	for cond in conditions:
 		var c = cond.check(_mask, conditions)
-		if not c:
+		if c:
 			resultat = resultat + 25
-	
-	return true
+	return resultat
