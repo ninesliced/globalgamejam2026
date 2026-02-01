@@ -14,6 +14,7 @@
 [ext_resource type="Script" uid="uid://cvqrw86s48u0f" path="res://scenes/menu_titre.gd" id="9_w65of"]
 [ext_resource type="Texture2D" uid="uid://321tul4588vo" path="res://assets/sprites/Interface/Menu/littleguys2.png" id="10_kcc3o"]
 [ext_resource type="Texture2D" uid="uid://qig61a3p6d0j" path="res://assets/sprites/Interface/Menu/littleguys3.png" id="11_6rcc6"]
+[ext_resource type="Texture2D" uid="uid://clj3cm5t5qnve" path="res://assets/sprites/Interface/Menu/menu_credits.png" id="15_kcc3o"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_p6dhs"]
 shader = ExtResource("1_wosw1")
@@ -32,6 +33,7 @@ texture = ExtResource("1_4ignj")
 centered = false
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=2123862985]
+layer = 0
 
 [node name="Control" type="Control" parent="CanvasLayer" unique_id=739088349]
 layout_mode = 3
@@ -101,6 +103,13 @@ spd = 7.725
 position = Vector2(929, 590)
 texture = ExtResource("8_hiwto")
 script = ExtResource("9_w65of")
+
+[node name="MenuCredits" type="Sprite2D" parent="." unique_id=101787541]
+visible = false
+z_index = 14
+position = Vector2(666, 701)
+scale = Vector2(0.61177135, 0.61177135)
+texture = ExtResource("15_kcc3o")
 
 [connection signal="pressed" from="CanvasLayer/Control/MarginContainer/VBoxContainer/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="CanvasLayer/Control/MarginContainer/VBoxContainer/Credits" to="." method="_on_credits_pressed"]
