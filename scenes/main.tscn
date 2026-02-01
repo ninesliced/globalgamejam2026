@@ -29,7 +29,6 @@ texture = ExtResource("2_jyhfs")
 
 [node name="Mask" parent="." unique_id=1566539684 instance=ExtResource("1_o5qli")]
 position = Vector2(595, 572)
-base_texture = ExtResource("4_tbgi4")
 
 [node name="GameUI" parent="." unique_id=30526492 instance=ExtResource("2_0wfyh")]
 custom_minimum_size = Vector2(1920, 1080)
