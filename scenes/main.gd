@@ -52,12 +52,18 @@ func assign_dialog_text(text: String):
 
 
 func _on_mask_signal_evaluer_masque() -> void:
-	score_total = score_total + mask_checker.check(mask)
+	var score = mask_checker.check(mask)
+	score_total = score_total + score
 	modif_score.emit(score_total) 
+	if score > 0:
+		assign_dialog_text("réussi!")
+	else:
+		assign_dialog_text("échec!")
 
 func _on_mask_signal_nouvelles_demandes() -> void:
 	generate_new_condition()
 
 func generate_new_condition():
 	mask_checker.generate()
+	await get_tree().create_timer(2.0).timeout
 	assign_dialog_text(mask_checker.text)
