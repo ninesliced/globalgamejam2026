@@ -14,7 +14,7 @@ func generate():
 
 func generate_new_conditions():
 	var _conditions = []
-	var possibilities = range(2)
+	var possibilities = [0, 1, 2]
 	var number_of_conditions = randi_range(min_number_of_conditions, max_number_of_conditions)
 	
 	for i in range(number_of_conditions):
