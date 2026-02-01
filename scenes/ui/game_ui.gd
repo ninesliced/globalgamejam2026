@@ -11,6 +11,7 @@ signal commencer()
 signal modif_temps(temps : int)
 signal modif_score(score : int)
 
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
@@ -56,3 +57,7 @@ func _on_timer_temps(temps_ecoule: int) -> void:
 
 func _on_main_modif_score(score: int) -> void:
 	modif_score.emit(score)
+
+
+func assign_dialog_text(text: String):
+	pass
