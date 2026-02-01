@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://yj2obiewdyqk"]
+
+[ext_resource type="Script" uid="uid://dna2k64lolvqi" path="res://scenes/tutorial.gd" id="1_gbqnl"]
+[ext_resource type="Shader" uid="uid://c5ccq73dph6qh" path="res://scenes/main.gdshader" id="2_wr8iv"]
+[ext_resource type="Texture2D" uid="uid://vepvsc0sn6oi" path="res://assets/textures/noiseTexture.png" id="3_e13mp"]
+[ext_resource type="Texture2D" uid="uid://csot0ppghymrk" path="res://assets/sprites/Interface/Context/lore_background.png" id="4_ckvwl"]
+[ext_resource type="Texture2D" uid="uid://c5mhbcagqvj8b" path="res://assets/sprites/Interface/Context/lore_magicien.png" id="5_nlqja"]
+[ext_resource type="Script" uid="uid://bxfgsksvn0lei" path="res://scenes/lore_context_2.gd" id="6_0epgs"]
+[ext_resource type="Texture2D" uid="uid://dx58rf5acr8te" path="res://assets/sprites/Interface/Context/lore_texte.png" id="7_g2equ"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_p6dhs"]
+shader = ExtResource("2_wr8iv")
+shader_parameter/NOISE_PATTERN = ExtResource("3_e13mp")
+shader_parameter/scroll_speed = 0.05
+shader_parameter/deform_intesity = 0.01
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fiw8w"]
+
+[node name="Tutorial" type="Node2D" unique_id=1982634031]
+script = ExtResource("1_gbqnl")
+
+[node name="MenuBackground" type="Sprite2D" parent="." unique_id=501838584]
+material = SubResource("ShaderMaterial_p6dhs")
+position = Vector2(-46.222168, -26)
+scale = Vector2(1.048148, 1.0481482)
+texture = ExtResource("4_ckvwl")
+centered = false
+
+[node name="LoreContext" type="Sprite2D" parent="." unique_id=1478561643]
+position = Vector2(-4, 41)
+texture = ExtResource("5_nlqja")
+centered = false
+script = ExtResource("6_0epgs")
+
+[node name="LoreContext2" type="Sprite2D" parent="." unique_id=2008098494]
+texture = ExtResource("7_g2equ")
+centered = false
+
+[node name="Button" type="Button" parent="." unique_id=2141998987]
+offset_left = -34.0
+offset_top = -24.0
+offset_right = 1999.0
+offset_bottom = 1153.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_fiw8w")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_fiw8w")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_fiw8w")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_fiw8w")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_fiw8w")
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
