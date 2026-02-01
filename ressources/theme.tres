@@ -19,6 +19,7 @@ corner_radius_bottom_left = 10
 corner_detail = 10
 
 [resource]
+Button/fonts/font = ExtResource("2_cgoy4")
 Button/styles/disabled = SubResource("StyleBoxTexture_cgoy4")
 Button/styles/focus = SubResource("StyleBoxTexture_cgoy4")
 Button/styles/hover = SubResource("StyleBoxTexture_jb3ky")
