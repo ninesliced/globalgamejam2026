@@ -13,6 +13,7 @@ func set_mask_element(elem : MaskElement):
 		current_mask_element.destroy_self()
 		current_mask_element = elem
 
+
 func place_element():
 	if not current_mask_element :
 		return

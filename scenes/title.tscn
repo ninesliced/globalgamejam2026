@@ -1,0 +1,115 @@
+[gd_scene format=3 uid="uid://b54778h3gbumx"]
+
+[ext_resource type="Texture2D" uid="uid://dujpt1thwp8yi" path="res://assets/sprites/Interface/Menu/menu_background.png" id="1_4ignj"]
+[ext_resource type="Script" uid="uid://fb27xelff3x1" path="res://scenes/title.gd" id="1_4rr2b"]
+[ext_resource type="Shader" uid="uid://c5ccq73dph6qh" path="res://scenes/main.gdshader" id="1_wosw1"]
+[ext_resource type="Texture2D" uid="uid://vepvsc0sn6oi" path="res://assets/textures/noiseTexture.png" id="2_p6dhs"]
+[ext_resource type="Texture2D" uid="uid://dlm0fo3cpjtk0" path="res://assets/sprites/Interface/Menu/menu_bouton_credits.png" id="4_pyl7j"]
+[ext_resource type="Texture2D" uid="uid://drhmqkyy62vle" path="res://assets/sprites/Interface/Menu/menu_bouton_jouer.png" id="5_b3w7a"]
+[ext_resource type="Script" uid="uid://ddmli3t3m6v5c" path="res://scenes/main_menu_btn.gd" id="6_81wt4"]
+[ext_resource type="Texture2D" uid="uid://ymuy2ccumlwi" path="res://assets/sprites/Interface/Menu/menu_magicien.png" id="7_yql1r"]
+[ext_resource type="Texture2D" uid="uid://b844g3iin4xw" path="res://assets/sprites/Interface/Menu/littleguys.png" id="8_7af2g"]
+[ext_resource type="Texture2D" uid="uid://b70n82l7pymbr" path="res://assets/sprites/Interface/Menu/menu_titre.png" id="8_hiwto"]
+[ext_resource type="Script" uid="uid://ddaeciwiy0t41" path="res://scenes/masque_1.gd" id="9_81wt4"]
+[ext_resource type="Script" uid="uid://cvqrw86s48u0f" path="res://scenes/menu_titre.gd" id="9_w65of"]
+[ext_resource type="Texture2D" uid="uid://321tul4588vo" path="res://assets/sprites/Interface/Menu/littleguys2.png" id="10_kcc3o"]
+[ext_resource type="Texture2D" uid="uid://qig61a3p6d0j" path="res://assets/sprites/Interface/Menu/littleguys3.png" id="11_6rcc6"]
+[ext_resource type="Texture2D" uid="uid://clj3cm5t5qnve" path="res://assets/sprites/Interface/Menu/menu_credits.png" id="15_kcc3o"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_p6dhs"]
+shader = ExtResource("1_wosw1")
+shader_parameter/NOISE_PATTERN = ExtResource("2_p6dhs")
+shader_parameter/scroll_speed = 0.05
+shader_parameter/deform_intesity = 0.01
+
+[node name="Title" type="Node2D" unique_id=1982634031]
+script = ExtResource("1_4rr2b")
+
+[node name="MenuBackground" type="Sprite2D" parent="." unique_id=501838584]
+material = SubResource("ShaderMaterial_p6dhs")
+position = Vector2(-46.222168, -26)
+scale = Vector2(1.048148, 1.0481482)
+texture = ExtResource("1_4ignj")
+centered = false
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=2123862985]
+layer = 0
+
+[node name="Control" type="Control" parent="CanvasLayer" unique_id=739088349]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/Control" unique_id=1587582176]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_right = 184
+theme_override_constants/margin_bottom = 87
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Control/MarginContainer" unique_id=2020027484]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+
+[node name="Play" type="TextureButton" parent="CanvasLayer/Control/MarginContainer/VBoxContainer" unique_id=1730343581]
+layout_mode = 2
+texture_normal = ExtResource("5_b3w7a")
+texture_pressed = ExtResource("5_b3w7a")
+texture_hover = ExtResource("5_b3w7a")
+texture_disabled = ExtResource("5_b3w7a")
+texture_focused = ExtResource("5_b3w7a")
+script = ExtResource("6_81wt4")
+
+[node name="Credits" type="TextureButton" parent="CanvasLayer/Control/MarginContainer/VBoxContainer" unique_id=604642002]
+layout_mode = 2
+texture_normal = ExtResource("4_pyl7j")
+texture_pressed = ExtResource("4_pyl7j")
+texture_hover = ExtResource("4_pyl7j")
+texture_disabled = ExtResource("4_pyl7j")
+texture_focused = ExtResource("4_pyl7j")
+script = ExtResource("6_81wt4")
+
+[node name="MenuMagicien" type="Sprite2D" parent="." unique_id=1903614076]
+position = Vector2(947, 554)
+texture = ExtResource("7_yql1r")
+
+[node name="Masque1" type="Sprite2D" parent="." unique_id=451515541]
+position = Vector2(595, 226)
+texture = ExtResource("8_7af2g")
+script = ExtResource("9_81wt4")
+
+[node name="Masque2" type="Sprite2D" parent="." unique_id=2018854053]
+position = Vector2(595, 226)
+texture = ExtResource("10_kcc3o")
+script = ExtResource("9_81wt4")
+offset_t = 0.48
+delta_sped = 1.72
+
+[node name="Masque3" type="Sprite2D" parent="." unique_id=1326673216]
+position = Vector2(595, 226)
+texture = ExtResource("11_6rcc6")
+script = ExtResource("9_81wt4")
+offset_t = -0.255
+spd = 7.725
+
+[node name="MenuTitre" type="Sprite2D" parent="." unique_id=159602816]
+position = Vector2(929, 590)
+texture = ExtResource("8_hiwto")
+script = ExtResource("9_w65of")
+
+[node name="MenuCredits" type="Sprite2D" parent="." unique_id=101787541]
+visible = false
+z_index = 14
+position = Vector2(666, 701)
+scale = Vector2(0.61177135, 0.61177135)
+texture = ExtResource("15_kcc3o")
+
+[connection signal="pressed" from="CanvasLayer/Control/MarginContainer/VBoxContainer/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/MarginContainer/VBoxContainer/Credits" to="." method="_on_credits_pressed"]

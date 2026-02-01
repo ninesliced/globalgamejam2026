@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://d14pa1yw1hp1v"]
+
+[ext_resource type="Script" uid="uid://ddvpp5x88jcg7" path="res://scenes/lore.gd" id="1_fiw8w"]
+[ext_resource type="Shader" uid="uid://c5ccq73dph6qh" path="res://scenes/main.gdshader" id="2_pbt4o"]
+[ext_resource type="Texture2D" uid="uid://vepvsc0sn6oi" path="res://assets/textures/noiseTexture.png" id="3_c8bxi"]
+[ext_resource type="Texture2D" uid="uid://csot0ppghymrk" path="res://assets/sprites/Interface/Context/lore_background.png" id="4_5iqog"]
+[ext_resource type="Texture2D" uid="uid://c5mhbcagqvj8b" path="res://assets/sprites/Interface/Context/lore_magicien.png" id="5_g7dn5"]
+[ext_resource type="Texture2D" uid="uid://dx58rf5acr8te" path="res://assets/sprites/Interface/Context/lore_texte.png" id="6_xhytr"]
+[ext_resource type="Script" uid="uid://bxfgsksvn0lei" path="res://scenes/lore_context_2.gd" id="7_g7dn5"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_p6dhs"]
+shader = ExtResource("2_pbt4o")
+shader_parameter/NOISE_PATTERN = ExtResource("3_c8bxi")
+shader_parameter/scroll_speed = 0.05
+shader_parameter/deform_intesity = 0.01
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fiw8w"]
+
+[node name="Lore" type="Node2D" unique_id=1982634031]
+script = ExtResource("1_fiw8w")
+
+[node name="MenuBackground" type="Sprite2D" parent="." unique_id=501838584]
+material = SubResource("ShaderMaterial_p6dhs")
+position = Vector2(-46.222168, -26)
+scale = Vector2(1.048148, 1.0481482)
+texture = ExtResource("4_5iqog")
+centered = false
+
+[node name="LoreContext" type="Sprite2D" parent="." unique_id=1478561643]
+texture = ExtResource("5_g7dn5")
+centered = false
+
+[node name="LoreContext2" type="Sprite2D" parent="." unique_id=2008098494]
+texture = ExtResource("6_xhytr")
+centered = false
+script = ExtResource("7_g7dn5")
+
+[node name="Button" type="Button" parent="." unique_id=2141998987]
+offset_left = -34.0
+offset_top = -24.0
+offset_right = 1999.0
+offset_bottom = 1153.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_fiw8w")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_fiw8w")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_fiw8w")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_fiw8w")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_fiw8w")
+metadata/_edit_lock_ = true
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
