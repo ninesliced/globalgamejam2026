@@ -1,6 +1,7 @@
 [gd_resource type="Theme" format=3 uid="uid://lju153lt28i2"]
 
 [ext_resource type="Texture2D" uid="uid://dvlsd7qpl6njl" path="res://assets/sprites/Interface/asset_bouton_petit_carré.png" id="1_jb3ky"]
+[ext_resource type="FontFile" uid="uid://dd8jw8eg53jcu" path="res://assets/fonts/LEMONMILK-Bold.otf" id="2_cgoy4"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_cgoy4"]
 texture = ExtResource("1_jb3ky")
@@ -15,3 +16,4 @@ Button/styles/focus = SubResource("StyleBoxTexture_cgoy4")
 Button/styles/hover = SubResource("StyleBoxTexture_jb3ky")
 Button/styles/normal = SubResource("StyleBoxTexture_cgoy4")
 Button/styles/pressed = SubResource("StyleBoxTexture_cgoy4")
+Label/fonts/font = ExtResource("2_cgoy4")

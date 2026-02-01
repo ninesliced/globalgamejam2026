@@ -55,7 +55,6 @@ func _process(delta: float) -> void:
 	$Sprite2D.scale.x = 1/squash
 	$Sprite2D.scale.y = squash
 	squash = move_toward(squash, 1.0, delta*10)
-	#$Sprite2D.texture = base_texture
 	
 	match state:
 		MaskElementState.Following :
@@ -67,7 +66,6 @@ func _process(delta: float) -> void:
 				pouic()
 				GlobalMaskElement.place_element()
 				state = MaskElementState.Placed
-			
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_accept"):

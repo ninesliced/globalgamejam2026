@@ -17,10 +17,15 @@ func _process(delta: float) -> void:
 func add_element(_element: MaskElement):
 	if not _element:
 		return
+	
 	_elements.append(_element)
 	var p = Vector2(_element.global_position)
 	_element.reparent(self)
 	_element.global_position = p
+	
+	await get_tree().create_timer(0.05).timeout
+	_element.global_position = p
+	
 
 func remove_last_element():
 	if _elements.is_empty():
@@ -43,7 +48,6 @@ func reset_mask():
 	for e in _elements:
 		if e:
 			e.destroy_self()
-
 	_elements = []
 
 func alea_demande():

@@ -14,7 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://3yctxi7r7qpi" path="res://assets/sprites/masks/Mask_accessories/asset_mask_accessories_eyes_redd.png" id="7_bxde6"]
 [ext_resource type="Texture2D" uid="uid://djyg2cmpe82wv" path="res://assets/sprites/Interface/asset_bouton_fini.png" id="9_aq72h"]
 [ext_resource type="Script" uid="uid://dkmaup7nq7hsn" path="res://scenes/ui/score_container.gd" id="9_fftnl"]
-[ext_resource type="Script" uid="uid://tw16esbo0he7" path="res://scenes/ui/demande_label.gd" id="9_k7elv"]
+[ext_resource type="Script" path="res://scenes/ui/demande_label.gd" id="9_k7elv"]
 [ext_resource type="Script" uid="uid://b2ggnfubsbepm" path="res://scenes/ui/label.gd" id="10_bxde6"]
 [ext_resource type="Script" uid="uid://drer27ykqjrre" path="res://scenes/ui/start_screen.gd" id="10_crnce"]
 [ext_resource type="Script" uid="uid://d28dio67ttnk5" path="res://scenes/ui/button.gd" id="11_bxde6"]
@@ -61,6 +61,11 @@ region_rect = Rect2(30.461842, 21.586212, 642.8571, 135.33836)
 modulate_color = Color(1.353256, 1.353256, 1.353256, 1)
 
 [sub_resource type="GDScript" id="GDScript_yvtb5"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_i3ans"]
+font_size = 40
+outline_size = 31
+outline_color = Color(0.20279592, 0.09128416, 0.4923371, 1)
 
 [node name="GameUI" type="Control" unique_id=30526492]
 layout_mode = 3
@@ -285,12 +290,16 @@ offset_bottom = 80.0
 [node name="Label" type="Label" parent="MarginContainer" unique_id=208846798]
 layout_mode = 2
 size_flags_horizontal = 0
+theme = ExtResource("2_x0n6o")
 theme_override_font_sizes/font_size = 32
 text = "TEMPS : 180.0 s"
+label_settings = SubResource("LabelSettings_i3ans")
+horizontal_alignment = 1
 
 [node name="Label2" type="Label" parent="MarginContainer" unique_id=1205780846]
 layout_mode = 2
 size_flags_horizontal = 8
+theme = ExtResource("2_x0n6o")
 theme_override_font_sizes/font_size = 32
 text = "SCORE : 1005481"
 
