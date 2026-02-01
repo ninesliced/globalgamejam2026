@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://ctxqwufipbljy"]
 
+[ext_resource type="Theme" uid="uid://lju153lt28i2" path="res://ressources/theme.tres" id="1_i6u02"]
 [ext_resource type="Script" uid="uid://cw8cixxb0d2cm" path="res://scenes/ui/mask_element_ui.gd" id="1_xk7wh"]
 [ext_resource type="PackedScene" uid="uid://dr8b3y6x4mrrf" path="res://scenes/game/MaskElement.tscn" id="2_nmm2j"]
 
@@ -7,6 +8,7 @@
 custom_minimum_size = Vector2(100, 100)
 offset_right = 8.0
 offset_bottom = 8.0
+theme = ExtResource("1_i6u02")
 icon_alignment = 1
 expand_icon = true
 script = ExtResource("1_xk7wh")

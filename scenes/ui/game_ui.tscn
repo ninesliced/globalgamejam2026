@@ -2,14 +2,17 @@
 
 [ext_resource type="Script" uid="uid://cghi3mqhadeqw" path="res://scenes/ui/game_ui.gd" id="1_gwk6t"]
 [ext_resource type="PackedScene" uid="uid://ctxqwufipbljy" path="res://scenes/ui/element_button.tscn" id="2_ru5ln"]
+[ext_resource type="Theme" uid="uid://lju153lt28i2" path="res://ressources/theme.tres" id="2_x0n6o"]
 [ext_resource type="Script" uid="uid://jrwmfd36vlcf" path="res://scenes/ui/done_button.gd" id="2_xjfbv"]
+[ext_resource type="Texture2D" uid="uid://bqvskiqyfj2na" path="res://assets/sprites/Interface/asset_rectangle_background.png" id="3_oqj4c"]
 [ext_resource type="Texture2D" uid="uid://dp0rnx2bq4ehi" path="res://assets/sprites/masks/Mask_accessories/asset_mask_accessories_3eyes.png" id="3_v1bdg"]
 [ext_resource type="Texture2D" uid="uid://hpjlbxfev3io" path="res://assets/sprites/masks/Mask_accessories/asset_mask_accessories_goateye_yellow.png" id="4_qrkc0"]
 [ext_resource type="Script" uid="uid://bu0cj2eyjrvn4" path="res://ressources/mask_element_param.gd" id="4_v1bdg"]
 [ext_resource type="Texture2D" uid="uid://vtursprimdlv" path="res://assets/sprites/masks/Mask_accessories/asset_mask_accessories_eye_only.png" id="5_yvtb5"]
 [ext_resource type="Texture2D" uid="uid://3yctxi7r7qpi" path="res://assets/sprites/masks/Mask_accessories/asset_mask_accessories_eyes_redd.png" id="7_bxde6"]
+[ext_resource type="Texture2D" uid="uid://djyg2cmpe82wv" path="res://assets/sprites/Interface/asset_bouton_fini.png" id="9_aq72h"]
 [ext_resource type="Script" uid="uid://dkmaup7nq7hsn" path="res://scenes/ui/score_container.gd" id="9_fftnl"]
-[ext_resource type="Script" path="res://scenes/ui/demande_label.gd" id="9_k7elv"]
+[ext_resource type="Script" uid="uid://tw16esbo0he7" path="res://scenes/ui/demande_label.gd" id="9_k7elv"]
 [ext_resource type="Script" uid="uid://b2ggnfubsbepm" path="res://scenes/ui/label.gd" id="10_bxde6"]
 [ext_resource type="Script" uid="uid://drer27ykqjrre" path="res://scenes/ui/start_screen.gd" id="10_crnce"]
 [ext_resource type="Script" uid="uid://d28dio67ttnk5" path="res://scenes/ui/button.gd" id="11_bxde6"]
@@ -40,6 +43,15 @@ base_texture = ExtResource("7_bxde6")
 element_types = Array[int]([0])
 metadata/_custom_type_script = "uid://bu0cj2eyjrvn4"
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_oqj4c"]
+texture = ExtResource("9_aq72h")
+region_rect = Rect2(30.461842, 21.586212, 642.8571, 135.33836)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_aq72h"]
+texture = ExtResource("9_aq72h")
+region_rect = Rect2(30.461842, 21.586212, 642.8571, 135.33836)
+modulate_color = Color(1.353256, 1.353256, 1.353256, 1)
+
 [sub_resource type="GDScript" id="GDScript_yvtb5"]
 
 [node name="GameUI" type="Control" unique_id=30526492]
@@ -67,6 +79,7 @@ custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 0
+theme = ExtResource("2_x0n6o")
 text = "UNDO"
 
 [node name="ResetButton" type="Button" parent="UndoContainer" unique_id=1735923866]
@@ -74,6 +87,7 @@ custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
+theme = ExtResource("2_x0n6o")
 text = "RESET"
 
 [node name="ElementView" type="Control" parent="." unique_id=1802929158]
@@ -85,6 +99,12 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 0
 grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="ElementView" unique_id=1334213034]
+layout_mode = 0
+offset_right = 720.0
+offset_bottom = 1080.0
+texture = ExtResource("3_oqj4c")
 
 [node name="ColorRect" type="ColorRect" parent="ElementView" unique_id=655589777]
 layout_mode = 1
@@ -183,16 +203,20 @@ text = "HIHI
 "
 
 [node name="DoneButton" type="Button" parent="ElementView/MarginContainer/VBoxContainer" unique_id=1121714574]
-custom_minimum_size = Vector2(0, 100)
+custom_minimum_size = Vector2(0, 120.91)
 layout_mode = 2
-text = "FINI !"
+theme_override_styles/normal = SubResource("StyleBoxTexture_oqj4c")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_oqj4c")
+theme_override_styles/hover = SubResource("StyleBoxTexture_aq72h")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_oqj4c")
+theme_override_styles/focus = SubResource("StyleBoxTexture_oqj4c")
 script = ExtResource("2_xjfbv")
 
 [node name="DemandeContainer" type="MarginContainer" parent="." unique_id=836737322]
 layout_mode = 0
 offset_left = -1.0
 offset_top = 930.0
-offset_right = 1199.0
+offset_right = 1202.0
 offset_bottom = 1080.0
 script = SubResource("GDScript_yvtb5")
 
@@ -208,6 +232,7 @@ autowrap_mode = 3
 script = ExtResource("9_k7elv")
 
 [node name="StartScreen" type="PanelContainer" parent="." unique_id=2110677133]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -241,12 +266,31 @@ layout_mode = 2
 text = "NOUVELLE PARTIE"
 script = ExtResource("11_bxde6")
 
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1396241773]
+layout_mode = 0
+offset_left = 483.0
+offset_top = 10.0
+offset_right = 1163.0
+offset_bottom = 80.0
+
+[node name="Label" type="Label" parent="MarginContainer" unique_id=208846798]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_font_sizes/font_size = 32
+text = "TEMPS : 180.0 s"
+
+[node name="Label2" type="Label" parent="MarginContainer" unique_id=1205780846]
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_font_sizes/font_size = 32
+text = "SCORE : 1005481"
+
+[connection signal="afficher_score" from="." to="StartScreen" method="_on_game_ui_afficher_score"]
 [connection signal="afficher_score" from="." to="StartScreen/VBoxContainer/ScoreContainer" method="_on_game_ui_afficher_score"]
 [connection signal="afficher_score" from="." to="StartScreen/VBoxContainer/Button" method="_on_game_ui_afficher_score"]
-[connection signal="afficher_score" from="." to="StartScreen" method="_on_game_ui_afficher_score"]
+[connection signal="cacher_score" from="." to="StartScreen" method="_on_game_ui_cacher_score"]
 [connection signal="cacher_score" from="." to="StartScreen/VBoxContainer/ScoreContainer" method="_on_game_ui_cacher_score"]
 [connection signal="cacher_score" from="." to="StartScreen/VBoxContainer/Button" method="_on_game_ui_cacher_score"]
-[connection signal="cacher_score" from="." to="StartScreen" method="_on_game_ui_cacher_score"]
 [connection signal="demande_signal" from="." to="DemandeContainer/DemandeLabel" method="_on_game_ui_demande_signal"]
 [connection signal="desactive" from="." to="ElementView/MarginContainer/VBoxContainer/DoneButton" method="_on_game_ui_desactive"]
 [connection signal="pressed" from="UndoContainer/UndoButton" to="." method="_on_undo_button_pressed"]
