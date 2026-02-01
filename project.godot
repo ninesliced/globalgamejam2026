@@ -15,7 +15,7 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 [application]
 
 config/name="Bal Cosmique"
-run/main_scene="uid://b54778h3gbumx"
+run/main_scene="uid://cwbc5foggxevb"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 boot_splash/bg_color=Color(0.84313726, 0.6, 0.42352942, 1)
 boot_splash/stretch_mode=0

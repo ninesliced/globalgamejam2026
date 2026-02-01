@@ -19,3 +19,8 @@ func _on_mask_checker_joue_son(nom: String) -> void:
 func _on_game_ui_faire_bruitage(son: String) -> void:
 	self.stream = load(son)
 	self.playing = true
+
+
+func _on_mask_bruitage() -> void:
+	self.stream = load("res://assets/sounds/sfx/sfx_drop.ogg")
+	self.playing = true

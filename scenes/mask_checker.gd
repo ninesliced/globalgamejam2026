@@ -50,11 +50,9 @@ func get_condition_text():
 
 func feedback_audio(score : int):
 	if score < 25:
-		joue_son.emit("res://assets/sounds/foirade.mp3")
-	elif score < 75:
-		joue_son.emit("res://assets/sounds/bien.mp3")
+		joue_son.emit("res://assets/sounds/sfx/sfx_fail.ogg")
 	else:
-		joue_son.emit("res://assets/sounds/reussite.mp3")
+		joue_son.emit("res://assets/sounds/sfx/sfx_success.ogg")
 
 
 func check(_mask: Mask) -> int:

@@ -758,5 +758,4 @@ script = ExtResource("11_bxde6")
 [connection signal="jouer_clic" from="ElementView/MarginContainer/VBoxContainer/TabContainer/Yeux/MarginContainer/GridContainer/MaskElementUI" to="." method="_on_mask_element_ui_jouer_clic"]
 [connection signal="jouer_clic" from="ElementView/MarginContainer/VBoxContainer/TabContainer/Yeux/MarginContainer/GridContainer/MaskElementUI2" to="." method="_on_mask_element_ui_2_jouer_clic"]
 [connection signal="pressed" from="ElementView/MarginContainer/VBoxContainer/DoneButton" to="." method="_on_done_button_pressed"]
-[connection signal="bruitage" from="StartScreen/VBoxContainer/ScoreContainer/Label" to="." method="_on_label_bruitage"]
 [connection signal="pressed" from="StartScreen/VBoxContainer/Button" to="." method="_on_button_pressed"]

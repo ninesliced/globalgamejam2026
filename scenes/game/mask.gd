@@ -5,6 +5,7 @@ extends Node2D
 
 signal signal_nouvelles_demandes()
 signal signal_evaluer_masque()
+signal bruitage()
 
 var type : MaskParams.MaskType
 
@@ -36,6 +37,10 @@ func add_element(_element: MaskElement):
 	var p = Vector2(_element.global_position)
 	_element.reparent(self)
 	_element.global_position = p
+	
+	
+	bruitage.emit()
+	
 	
 	await get_tree().create_timer(0.05).timeout
 	_element.global_position = p
