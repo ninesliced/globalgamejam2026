@@ -20,8 +20,7 @@ func _process(delta: float) -> void:
 func update_mask(base_texture, _type) :
 	if not MaskManager.has_mask :
 		MaskManager.has_mask = true
-		
-	print("J'ai un masque")
+	
 	_sprite.texture = base_texture
 	type = _type
 	
