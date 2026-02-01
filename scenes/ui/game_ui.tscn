@@ -756,4 +756,5 @@ script = ExtResource("11_bxde6")
 [connection signal="pressed" from="UndoContainer/ResetButton" to="." method="_on_reset_button_pressed"]
 [connection signal="pressed" from="UndoContainer/UndoButton" to="." method="_on_undo_button_pressed"]
 [connection signal="pressed" from="ElementView/MarginContainer/VBoxContainer/DoneButton" to="." method="_on_done_button_pressed"]
+[connection signal="bruitage" from="StartScreen/VBoxContainer/ScoreContainer/Label" to="." method="_on_label_bruitage"]
 [connection signal="pressed" from="StartScreen/VBoxContainer/Button" to="." method="_on_button_pressed"]
