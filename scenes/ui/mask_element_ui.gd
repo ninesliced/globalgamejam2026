@@ -6,6 +6,7 @@ extends Button
 
 var _mask_element_scene = load("res://scenes/game/MaskElement.tscn")
 
+signal jouer_clic()
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -21,6 +22,7 @@ func _process(delta: float) -> void:
 	
 
 func _on_pressed() -> void:
+	jouer_clic.emit()
 	var s: MaskElement = _mask_element_scene.instantiate()
 	s.init_element(_element_param)
 	s.position = get_viewport().get_mouse_position()

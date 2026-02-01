@@ -2,6 +2,8 @@ extends Button
 
 @export var params : MaskParams
 
+signal jouer_clic()
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	icon = params.texture_base
@@ -13,6 +15,6 @@ func _process(delta: float) -> void:
 	rotation = sin(_time)*0.1
 
 func _on_pressed() -> void:
-	print("J'ai un masque")
+	jouer_clic.emit()
 	MaskManager.current_mask.update_mask(params.texture_base, params.type)
 	

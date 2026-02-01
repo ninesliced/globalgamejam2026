@@ -64,3 +64,11 @@ func assign_dialog_text(text: String):
 
 func _on_label_bruitage(son: String) -> void:
 	faire_bruitage.emit(son)
+
+
+func _on_mask_element_ui_jouer_clic() -> void:
+	faire_bruitage.emit("res://assets/sounds/select.mp3")
+
+
+func _on_mask_element_ui_2_jouer_clic() -> void:
+	faire_bruitage.emit("res://assets/sounds/select.mp3")
