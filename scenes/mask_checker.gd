@@ -6,6 +6,9 @@ var min_number_of_conditions = 1
 var max_number_of_conditions = 1
 
 func _ready():
+	generate()
+
+func generate():
 	conditions = generate_new_conditions()
 	text = get_condition_text()
 
@@ -21,6 +24,8 @@ func generate_new_conditions():
 		match r:
 			0:
 				_conditions.append(ConditionArchiduchesse.new())
+			1: 
+				_conditions.append(ConditionJeMeSens.new())
 	
 	return _conditions
 
@@ -32,11 +37,11 @@ func get_condition_text():
 	return s
 
 
-func check(_conditions, _mask: Mask) -> bool:
-	_conditions = conditions
+func check(_mask: Mask) -> int:
+	var resultat = 0
 	for cond in conditions:
-		var c = cond.check(_mask, _conditions)
+		var c = cond.check(_mask, conditions)
 		if not c:
-			return false
+			resultat = resultat + 25
 	
 	return true

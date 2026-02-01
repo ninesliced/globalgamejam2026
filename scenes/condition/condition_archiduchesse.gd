@@ -30,10 +30,6 @@ func _init() -> void:
 	prefix2 = prefixes2[randi_range(0, prefixes2.size()-1)]
 	score2 = scores2[prefix2]
 	
-	print(scores2)
-	print(prefix1, ": ", score1, " | ", prefix2, ": ", score2)
-	print(get_text())
-
 
 func get_text():
 	return "Les chaussettes de la {0}duchesse sont {1}sèches.".format([

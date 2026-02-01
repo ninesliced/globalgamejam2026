@@ -11,6 +11,7 @@ signal commencer()
 signal modif_temps(temps : int)
 signal modif_score(score : int)
 
+@onready var demande_label = %DemandeLabel
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -25,17 +26,14 @@ func _process(delta: float) -> void:
 func _on_done_button_pressed() -> void:
 	done_pressed.emit()
 	desactive.emit()
-	demande_signal.emit("DONE !")
 
 
 func _on_undo_button_pressed() -> void:
 	undo_pressed.emit()
-	demande_signal.emit("UNDO")
 
 
 func _on_reset_button_pressed() -> void:
 	reset_pressed.emit()
-	demande_signal.emit("RESET")
 
 
 func _on_main_afficher_score(score) -> void:
@@ -60,4 +58,4 @@ func _on_main_modif_score(score: int) -> void:
 
 
 func assign_dialog_text(text: String):
-	pass
+	demande_label.text = text
