@@ -6,11 +6,12 @@ extends Button
 func _ready() -> void:
 	icon = params.texture_base
 
-
+var _time = 0.0
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
-	
+	_time += delta
+	rotation = sin(_time)*0.1
+
 func _on_pressed() -> void:
 	print("J'ai un masque")
 	MaskManager.current_mask.update_mask(params.texture_base, params.type)

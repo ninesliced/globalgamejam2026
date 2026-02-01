@@ -10,6 +10,7 @@ signal modif_score(score : int)
 
 @onready var mask = $Mask
 @onready var mask_checker = $MaskChecker
+@onready var game_ui = $GameUI
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -42,3 +43,7 @@ func _on_timer_timeout() -> void:
 func _on_game_ui_commencer() -> void:
 	cacher_score.emit()
 	demarrer_timer.emit()
+
+
+func assign_dialog_text(text: String):
+	game_ui.assign_dialog_text(text)
