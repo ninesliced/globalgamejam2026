@@ -111,5 +111,7 @@ position = Vector2(666, 701)
 scale = Vector2(0.61177135, 0.61177135)
 texture = ExtResource("15_kcc3o")
 
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=593602212]
+
 [connection signal="pressed" from="CanvasLayer/Control/MarginContainer/VBoxContainer/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="CanvasLayer/Control/MarginContainer/VBoxContainer/Credits" to="." method="_on_credits_pressed"]

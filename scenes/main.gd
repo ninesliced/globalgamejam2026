@@ -18,6 +18,8 @@ var score_total = 0
 func _ready() -> void:
 	MaskManager.current_mask = $Mask
 	generate_new_condition()
+	
+	MusicPlayer.stop()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
