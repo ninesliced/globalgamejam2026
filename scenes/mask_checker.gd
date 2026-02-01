@@ -14,11 +14,11 @@ func generate():
 
 func generate_new_conditions():
 	var _conditions = []
-	var possibilities = range(2)
+	var possibilities = [0, 1, 2, 3]
 	var number_of_conditions = randi_range(min_number_of_conditions, max_number_of_conditions)
 	
 	for i in range(number_of_conditions):
-		var random_i = randi_range(0, possibilities.size())
+		var random_i = randi_range(0, possibilities.size()-1)
 		var r = possibilities.pop_at(random_i)
 		
 		match r:
@@ -28,6 +28,8 @@ func generate_new_conditions():
 				_conditions.append(ConditionJeMeSens.new())
 			2: 
 				_conditions.append(ConditionDiantre.new())
+			3: 
+				_conditions.append(ConditionMeteo.new())
 	
 	return _conditions
 

@@ -17,7 +17,11 @@ func _init() -> void:
 	meteo = meteos_possibles[randi_range(0, meteos_possibles.size()-1)]
 
 func get_text():
-	return "Aujourd’hui {0}.".format([])
+	return "Aujourd’hui {0}.".format([meteo])
 
 func check(_mask: Mask, _conditions):
-	return meteo == "il fait beau"
+	var c = _mask.count_with_color_and_type(
+		MaskElement.ElementColor.YELLOW, 
+		MaskElement.ElementType.EYE
+	)
+	return c > 1

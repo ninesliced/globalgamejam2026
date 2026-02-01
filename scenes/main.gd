@@ -23,7 +23,6 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 
-
 func _on_game_ui_done_pressed() -> void:
 	cacher_masque.emit()
 
