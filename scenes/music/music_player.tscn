@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://bcihd86i13pc2"]
+
+[ext_resource type="AudioStream" uid="uid://2e51uv7fcf3g" path="res://assets/sounds/music/music_titlescreen.ogg" id="1_0rdqw"]
+[ext_resource type="Script" uid="uid://bjgf5rhejjud8" path="res://scenes/music/music_player.gd" id="1_v1la8"]
+
+[node name="MusicPlayer" type="Node2D" unique_id=36114986]
+script = ExtResource("1_v1la8")
+
+[node name="Title" type="AudioStreamPlayer2D" parent="." unique_id=1911961866]
+stream = ExtResource("1_0rdqw")
+autoplay = true

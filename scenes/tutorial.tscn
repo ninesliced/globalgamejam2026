@@ -4,9 +4,10 @@
 [ext_resource type="Shader" uid="uid://c5ccq73dph6qh" path="res://scenes/main.gdshader" id="2_wr8iv"]
 [ext_resource type="Texture2D" uid="uid://vepvsc0sn6oi" path="res://assets/textures/noiseTexture.png" id="3_e13mp"]
 [ext_resource type="Texture2D" uid="uid://csot0ppghymrk" path="res://assets/sprites/Interface/Context/lore_background.png" id="4_ckvwl"]
-[ext_resource type="Texture2D" uid="uid://c5mhbcagqvj8b" path="res://assets/sprites/Interface/Context/lore_magicien.png" id="5_nlqja"]
+[ext_resource type="Texture2D" uid="uid://qm15t57yik6b" path="res://assets/sprites/Interface/Context/règles/contexte_règle_magienetjoueur.png" id="5_ckvwl"]
 [ext_resource type="Script" uid="uid://bxfgsksvn0lei" path="res://scenes/lore_context_2.gd" id="6_0epgs"]
-[ext_resource type="Texture2D" uid="uid://dx58rf5acr8te" path="res://assets/sprites/Interface/Context/lore_texte.png" id="7_g2equ"]
+[ext_resource type="Texture2D" uid="uid://c4pmu0n2nfifp" path="res://assets/sprites/Interface/Context/règles/contexte_règle_masques.png" id="7_nlqja"]
+[ext_resource type="Texture2D" uid="uid://bnf7kxcsiotdw" path="res://assets/sprites/Interface/Context/règles/contexte_règle_textesdesrègles.png" id="8_0epgs"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_p6dhs"]
 shader = ExtResource("2_wr8iv")
@@ -28,12 +29,19 @@ centered = false
 
 [node name="LoreContext" type="Sprite2D" parent="." unique_id=1478561643]
 position = Vector2(-4, 41)
-texture = ExtResource("5_nlqja")
+texture = ExtResource("5_ckvwl")
+centered = false
+script = ExtResource("6_0epgs")
+o = 8
+
+[node name="LoreContext3" type="Sprite2D" parent="." unique_id=892042352]
+position = Vector2(-4, 41)
+texture = ExtResource("7_nlqja")
 centered = false
 script = ExtResource("6_0epgs")
 
 [node name="LoreContext2" type="Sprite2D" parent="." unique_id=2008098494]
-texture = ExtResource("7_g2equ")
+texture = ExtResource("8_0epgs")
 centered = false
 
 [node name="Button" type="Button" parent="." unique_id=2141998987]

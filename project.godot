@@ -28,6 +28,7 @@ Signalbus="*res://globals/signalbus.gd"
 GlobalMaskElement="*uid://ctw1pqs4varjb"
 MaskManager="*uid://bxsltxlfdstgu"
 TransitionManager="*uid://kvf06xb5r4o0"
+MusicPlayer="*uid://bcihd86i13pc2"
 
 [display]
 
