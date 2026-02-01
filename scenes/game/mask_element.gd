@@ -65,7 +65,9 @@ func _process(delta: float) -> void:
 			
 			if GlobalMaskElement.left_click_just_pressed and GlobalMaskElement.is_in_area(position) and MaskManager.has_mask : 
 				pouic()
+
 				GlobalMaskElement.place_element()
+				
 				state = MaskElementState.Placed
 
 func _input(event: InputEvent) -> void:

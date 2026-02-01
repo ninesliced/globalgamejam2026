@@ -5,7 +5,7 @@ func _init() -> void:
 	pass
 	
 func get_text() -> String:
-	return "Le masque doit parler, mettez une bouche."
+	return "J'aime faire du bruit"
 	
 func check(_mask: Mask, _conditions):
 	var nbr_l = 0
