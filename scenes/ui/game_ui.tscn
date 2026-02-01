@@ -21,7 +21,6 @@
 [ext_resource type="Texture2D" uid="uid://cwtb7gqjugn4g" path="res://assets/sprites/Interface/asset_bouton_undo.png" id="6_r1cyd"]
 [ext_resource type="Texture2D" uid="uid://3yctxi7r7qpi" path="res://assets/sprites/masks/Mask_accessories/asset_mask_accessories_eyes_redd.png" id="7_bxde6"]
 [ext_resource type="Texture2D" uid="uid://djyg2cmpe82wv" path="res://assets/sprites/Interface/asset_bouton_fini.png" id="9_aq72h"]
-[ext_resource type="Script" uid="uid://dkmaup7nq7hsn" path="res://scenes/ui/score_container.gd" id="9_fftnl"]
 [ext_resource type="Script" uid="uid://tw16esbo0he7" path="res://scenes/ui/demande_label.gd" id="9_k7elv"]
 [ext_resource type="Texture2D" uid="uid://bhmf1cvg4armb" path="res://assets/sprites/masks/Mask_base/asset_mask_potato.png" id="10_20oq5"]
 [ext_resource type="Script" uid="uid://b2ggnfubsbepm" path="res://scenes/ui/label.gd" id="10_bxde6"]
@@ -37,7 +36,7 @@
 [ext_resource type="Texture2D" uid="uid://cymhvkewwc6mi" path="res://assets/sprites/masks/Mask_accessories/asset_mask_accessories_eye_black.png" id="24_qiy4r"]
 [ext_resource type="Texture2D" uid="uid://d23qnm15upnbt" path="res://assets/sprites/masks/Mask_accessories/asset_mask_accessories_nose_chat.png" id="25_cm35l"]
 [ext_resource type="Texture2D" uid="uid://b3ap5qphngym" path="res://assets/sprites/masks/Mask_accessories/asset_mask_accessories_eye_realistic.png" id="25_swkyc"]
-[ext_resource type="Script" path="res://scenes/ui/score.gd" id="25_t1jn2"]
+[ext_resource type="Script" uid="uid://ba37s3od3xs1w" path="res://scenes/ui/score.gd" id="25_t1jn2"]
 [ext_resource type="Texture2D" uid="uid://bnawvf63jq0ul" path="res://assets/sprites/masks/Mask_accessories/asset_mask_accessories_nose_clown.png" id="26_3fi4l"]
 [ext_resource type="Texture2D" uid="uid://nvhqls2j3rgy" path="res://assets/sprites/masks/Mask_accessories/asset_mask_accessories_nose_cochonou.png" id="27_cm35l"]
 [ext_resource type="Texture2D" uid="uid://sdahjemxwkfe" path="res://assets/sprites/masks/Mask_accessories/asset_mask_accessories_nose_realistic.png" id="28_3fi4l"]
@@ -677,7 +676,6 @@ theme_override_constants/separation = 24
 [node name="ScoreContainer" type="PanelContainer" parent="StartScreen/VBoxContainer" unique_id=142825022]
 custom_minimum_size = Vector2(600, 300)
 layout_mode = 2
-script = ExtResource("9_fftnl")
 
 [node name="Label" type="Label" parent="StartScreen/VBoxContainer/ScoreContainer" unique_id=1261900040]
 layout_mode = 2
@@ -705,6 +703,7 @@ script = ExtResource("11_bxde6")
 
 [connection signal="afficher_score" from="." to="StartScreen" method="_on_game_ui_afficher_score"]
 [connection signal="afficher_score" from="." to="StartScreen/VBoxContainer/ScoreContainer" method="_on_game_ui_afficher_score"]
+[connection signal="afficher_score" from="." to="StartScreen/VBoxContainer/ScoreContainer/Label" method="_on_game_ui_afficher_score"]
 [connection signal="afficher_score" from="." to="StartScreen/VBoxContainer/Button" method="_on_game_ui_afficher_score"]
 [connection signal="cacher_score" from="." to="StartScreen" method="_on_game_ui_cacher_score"]
 [connection signal="cacher_score" from="." to="StartScreen/VBoxContainer/ScoreContainer" method="_on_game_ui_cacher_score"]
@@ -716,5 +715,4 @@ script = ExtResource("11_bxde6")
 [connection signal="pressed" from="UndoContainer/ResetButton" to="." method="_on_reset_button_pressed"]
 [connection signal="pressed" from="UndoContainer/UndoButton" to="." method="_on_undo_button_pressed"]
 [connection signal="pressed" from="ElementView/MarginContainer/VBoxContainer/DoneButton" to="." method="_on_done_button_pressed"]
-[connection signal="score_affiche" from="StartScreen/VBoxContainer/ScoreContainer" to="StartScreen/VBoxContainer/ScoreContainer/Label" method="_on_score_container_score_affiche"]
 [connection signal="pressed" from="StartScreen/VBoxContainer/Button" to="." method="_on_button_pressed"]
