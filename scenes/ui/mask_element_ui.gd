@@ -23,5 +23,6 @@ func _process(delta: float) -> void:
 func _on_pressed() -> void:
 	var s: MaskElement = _mask_element_scene.instantiate()
 	s.init_element(_element_param)
+	s.position = get_viewport().get_mouse_position()
 	get_tree().current_scene.add_child(s)
 	GlobalMaskElement.set_mask_element(s)

@@ -3,7 +3,7 @@ extends Node2D
 
 @onready var _sprite: Sprite2D = $Sprite2D
 
-var has_mask : bool = false
+
 
 var type : MaskParams.MaskType
 
@@ -17,8 +17,8 @@ func _process(delta: float) -> void:
 	pass
 
 func update_mask(base_texture, _type) :
-	if not has_mask :
-		has_mask = true
+	if not MaskManager.has_mask :
+		MaskManager.has_mask = true
 		
 	print("J'ai un masque")
 	_sprite.texture = base_texture
@@ -29,7 +29,7 @@ func add_element(_element: MaskElement):
 	if not _element:
 		return
 		
-	if not has_mask :
+	if not MaskManager.has_mask :
 		return
 		
 	_elements.append(_element)
@@ -59,7 +59,7 @@ func show_mask():
 	tween.tween_property(self, "position", Vector2(600, 540), 1.0)
 
 func reset_mask():
-	if not has_mask :
+	if not MaskManager.has_mask :
 		return
 	
 	for e in _elements:

@@ -24,6 +24,8 @@
 [ext_resource type="Script" uid="uid://b2ggnfubsbepm" path="res://scenes/ui/label.gd" id="10_bxde6"]
 [ext_resource type="Script" uid="uid://drer27ykqjrre" path="res://scenes/ui/start_screen.gd" id="10_crnce"]
 [ext_resource type="Script" uid="uid://d28dio67ttnk5" path="res://scenes/ui/button.gd" id="11_bxde6"]
+[ext_resource type="Script" uid="uid://miiyvlc53t55" path="res://scenes/ui/temps.gd" id="17_pbku6"]
+[ext_resource type="Script" uid="uid://ba37s3od3xs1w" path="res://scenes/ui/score.gd" id="25_t1jn2"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_i3ans"]
 shader = ExtResource("3_i3ans")
@@ -300,7 +302,7 @@ autowrap_mode = 3
 script = ExtResource("9_k7elv")
 
 [node name="StartScreen" type="PanelContainer" parent="." unique_id=2110677133]
-visible = false
+z_index = 1
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -334,28 +336,28 @@ layout_mode = 2
 text = "NOUVELLE PARTIE"
 script = ExtResource("11_bxde6")
 
-[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1396241773]
+[node name="TempsScoreContainer" type="MarginContainer" parent="." unique_id=1396241773]
 layout_mode = 0
-offset_left = 483.0
+offset_left = 497.0
 offset_top = 10.0
-offset_right = 1163.0
+offset_right = 1177.0
 offset_bottom = 80.0
 
-[node name="Label" type="Label" parent="MarginContainer" unique_id=208846798]
+[node name="Temps" type="Label" parent="TempsScoreContainer" unique_id=208846798]
 layout_mode = 2
 size_flags_horizontal = 0
 theme = ExtResource("2_x0n6o")
 theme_override_font_sizes/font_size = 32
-text = "TEMPS : 180.0 s"
-label_settings = SubResource("LabelSettings_i3ans")
-horizontal_alignment = 1
+text = "TEMPS : 180 s"
+script = ExtResource("17_pbku6")
 
-[node name="Label2" type="Label" parent="MarginContainer" unique_id=1205780846]
+[node name="Score" type="Label" parent="TempsScoreContainer" unique_id=1205780846]
 layout_mode = 2
 size_flags_horizontal = 8
 theme = ExtResource("2_x0n6o")
 theme_override_font_sizes/font_size = 32
 text = "SCORE : 1005481"
+script = ExtResource("25_t1jn2")
 
 [connection signal="afficher_score" from="." to="StartScreen" method="_on_game_ui_afficher_score"]
 [connection signal="afficher_score" from="." to="StartScreen/VBoxContainer/ScoreContainer" method="_on_game_ui_afficher_score"]
@@ -365,6 +367,8 @@ text = "SCORE : 1005481"
 [connection signal="cacher_score" from="." to="StartScreen/VBoxContainer/Button" method="_on_game_ui_cacher_score"]
 [connection signal="demande_signal" from="." to="DemandeContainer/DemandeLabel" method="_on_game_ui_demande_signal"]
 [connection signal="desactive" from="." to="ElementView/MarginContainer/VBoxContainer/DoneButton" method="_on_game_ui_desactive"]
+[connection signal="modif_score" from="." to="TempsScoreContainer/Score" method="_on_game_ui_modif_score"]
+[connection signal="modif_temps" from="." to="TempsScoreContainer/Temps" method="_on_game_ui_modif_temps"]
 [connection signal="pressed" from="UndoContainer/UndoButton" to="." method="_on_undo_button_pressed"]
 [connection signal="pressed" from="UndoContainer/ResetButton" to="." method="_on_reset_button_pressed"]
 [connection signal="pressed" from="ElementView/MarginContainer/VBoxContainer/DoneButton" to="." method="_on_done_button_pressed"]

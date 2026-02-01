@@ -2,7 +2,7 @@ extends Node
 
 var current_mask : Mask
 
-
+var has_mask : bool = false
 
 func _ready() -> void:
 	pass

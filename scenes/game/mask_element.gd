@@ -60,10 +60,10 @@ func _process(delta: float) -> void:
 	match state:
 		MaskElementState.Following :
 			var old_pos = Vector2(position)
-			var vector = get_viewport().get_mouse_position()
+			var vector = lerp(position,get_viewport().get_mouse_position(), 0.5)
 			position = vector
 			
-			if GlobalMaskElement.left_click_just_pressed and GlobalMaskElement.is_in_area(position) : 
+			if GlobalMaskElement.left_click_just_pressed and GlobalMaskElement.is_in_area(position) and MaskManager.has_mask : 
 				pouic()
 				GlobalMaskElement.place_element()
 				state = MaskElementState.Placed
