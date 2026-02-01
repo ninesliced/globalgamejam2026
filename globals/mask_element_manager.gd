@@ -16,7 +16,7 @@ func set_mask_element(elem : MaskElement):
 func place_element():
 	if not current_mask_element :
 		return
-		
+	
 	MaskManager.current_mask.add_element(current_mask_element)
 	current_mask_element = null
 
