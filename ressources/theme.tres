@@ -1,0 +1,17 @@
+[gd_resource type="Theme" format=3 uid="uid://lju153lt28i2"]
+
+[ext_resource type="Texture2D" uid="uid://dvlsd7qpl6njl" path="res://assets/sprites/Interface/asset_bouton_petit_carré.png" id="1_jb3ky"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_cgoy4"]
+texture = ExtResource("1_jb3ky")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jb3ky"]
+texture = ExtResource("1_jb3ky")
+modulate_color = Color(1.353256, 1.353256, 1.353256, 1)
+
+[resource]
+Button/styles/disabled = SubResource("StyleBoxTexture_cgoy4")
+Button/styles/focus = SubResource("StyleBoxTexture_cgoy4")
+Button/styles/hover = SubResource("StyleBoxTexture_jb3ky")
+Button/styles/normal = SubResource("StyleBoxTexture_cgoy4")
+Button/styles/pressed = SubResource("StyleBoxTexture_cgoy4")

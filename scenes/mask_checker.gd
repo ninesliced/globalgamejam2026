@@ -6,7 +6,7 @@ var conditions = [
 		MaskElement.ElementColor.PINK, 
 		MaskElement.ElementType.EYE,
 		1
-	)
+	),
 ]
 
 func check(_conditions, _mask: Mask) -> bool:
