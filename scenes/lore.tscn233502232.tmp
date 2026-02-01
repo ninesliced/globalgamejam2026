@@ -27,14 +27,13 @@ texture = ExtResource("4_5iqog")
 centered = false
 
 [node name="LoreContext" type="Sprite2D" parent="." unique_id=1478561643]
-position = Vector2(-4, 41)
 texture = ExtResource("5_g7dn5")
 centered = false
-script = ExtResource("7_g7dn5")
 
 [node name="LoreContext2" type="Sprite2D" parent="." unique_id=2008098494]
 texture = ExtResource("6_xhytr")
 centered = false
+script = ExtResource("7_g7dn5")
 
 [node name="Button" type="Button" parent="." unique_id=2141998987]
 offset_left = -34.0
@@ -46,5 +45,6 @@ theme_override_styles/pressed = SubResource("StyleBoxEmpty_fiw8w")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_fiw8w")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_fiw8w")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_fiw8w")
+metadata/_edit_lock_ = true
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
