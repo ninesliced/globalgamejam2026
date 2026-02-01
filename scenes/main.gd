@@ -4,7 +4,7 @@ signal cacher_masque()
 signal undo_masque()
 signal reset_masque()
 signal demarrer_timer()
-signal afficher_score()
+signal afficher_score(score : int)
 signal cacher_score()
 
 @onready var mask = $Mask
@@ -13,7 +13,6 @@ signal cacher_score()
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	MaskManager.current_mask = $Mask
-	demarrer_timer.emit()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -36,7 +35,9 @@ func _on_game_ui_reset_pressed() -> void:
 
 
 func _on_timer_timeout() -> void:
-	afficher_score.emit()
-	await get_tree().create_timer(10).timeout
+	afficher_score.emit(100)
+
+
+func _on_game_ui_commencer() -> void:
 	cacher_score.emit()
 	demarrer_timer.emit()

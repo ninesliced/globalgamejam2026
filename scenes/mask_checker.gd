@@ -15,5 +15,5 @@ func check(_conditions, _mask: Mask) -> bool:
 		var c = cond.check(_mask, _conditions)
 		if not c:
 			return false
-
+	
 	return true

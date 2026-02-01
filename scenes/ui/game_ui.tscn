@@ -7,9 +7,12 @@
 [ext_resource type="Texture2D" uid="uid://hpjlbxfev3io" path="res://assets/sprites/masks/Mask_accessories/asset_mask_accessories_goateye_yellow.png" id="4_qrkc0"]
 [ext_resource type="Script" uid="uid://bu0cj2eyjrvn4" path="res://ressources/mask_element_param.gd" id="4_v1bdg"]
 [ext_resource type="Texture2D" uid="uid://vtursprimdlv" path="res://assets/sprites/masks/Mask_accessories/asset_mask_accessories_eye_only.png" id="5_yvtb5"]
+[ext_resource type="Texture2D" uid="uid://3yctxi7r7qpi" path="res://assets/sprites/masks/Mask_accessories/asset_mask_accessories_eyes_redd.png" id="7_bxde6"]
 [ext_resource type="Script" uid="uid://dkmaup7nq7hsn" path="res://scenes/ui/score_container.gd" id="9_fftnl"]
-[ext_resource type="Script" uid="uid://tw16esbo0he7" path="res://scenes/ui/demande_label.gd" id="9_k7elv"]
+[ext_resource type="Script" path="res://scenes/ui/demande_label.gd" id="9_k7elv"]
 [ext_resource type="Script" uid="uid://b2ggnfubsbepm" path="res://scenes/ui/label.gd" id="10_bxde6"]
+[ext_resource type="Script" uid="uid://drer27ykqjrre" path="res://scenes/ui/start_screen.gd" id="10_crnce"]
+[ext_resource type="Script" uid="uid://d28dio67ttnk5" path="res://scenes/ui/button.gd" id="11_bxde6"]
 
 [sub_resource type="Resource" id="Resource_v1bdg"]
 script = ExtResource("4_v1bdg")
@@ -33,8 +36,7 @@ metadata/_custom_type_script = "uid://bu0cj2eyjrvn4"
 
 [sub_resource type="Resource" id="Resource_fftnl"]
 script = ExtResource("4_v1bdg")
-base_texture = ExtResource("7_k7elv")
-color = 1
+base_texture = ExtResource("7_bxde6")
 element_types = Array[int]([0])
 metadata/_custom_type_script = "uid://bu0cj2eyjrvn4"
 
@@ -189,8 +191,8 @@ script = ExtResource("2_xjfbv")
 [node name="DemandeContainer" type="MarginContainer" parent="." unique_id=836737322]
 layout_mode = 0
 offset_left = -1.0
-offset_top = 943.0
-offset_right = 1200.0
+offset_top = 930.0
+offset_right = 1199.0
 offset_bottom = 1080.0
 script = SubResource("GDScript_yvtb5")
 
@@ -205,27 +207,50 @@ vertical_alignment = 3
 autowrap_mode = 3
 script = ExtResource("9_k7elv")
 
-[node name="ScoreContainer" type="PanelContainer" parent="." unique_id=142825022]
-layout_mode = 0
-offset_left = 333.0
-offset_top = 360.0
-offset_right = 830.0
-offset_bottom = 651.0
+[node name="StartScreen" type="PanelContainer" parent="." unique_id=2110677133]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("10_crnce")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="StartScreen" unique_id=248378950]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 24
+
+[node name="ScoreContainer" type="PanelContainer" parent="StartScreen/VBoxContainer" unique_id=142825022]
+custom_minimum_size = Vector2(600, 300)
+layout_mode = 2
 script = ExtResource("9_fftnl")
 
-[node name="Label" type="Label" parent="ScoreContainer" unique_id=1261900040]
+[node name="Label" type="Label" parent="StartScreen/VBoxContainer/ScoreContainer" unique_id=1261900040]
 layout_mode = 2
-text = "SCORE : BANANES"
+text = "PRÊT POUR FAIRE DES MASQUES ?"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
 uppercase = true
 script = ExtResource("10_bxde6")
 
-[connection signal="afficher_score" from="." to="ScoreContainer" method="_on_game_ui_afficher_score"]
-[connection signal="cacher_score" from="." to="ScoreContainer" method="_on_game_ui_cacher_score"]
+[node name="Button" type="Button" parent="StartScreen/VBoxContainer" unique_id=186948069]
+layout_mode = 2
+text = "NOUVELLE PARTIE"
+script = ExtResource("11_bxde6")
+
+[connection signal="afficher_score" from="." to="StartScreen/VBoxContainer/ScoreContainer" method="_on_game_ui_afficher_score"]
+[connection signal="afficher_score" from="." to="StartScreen/VBoxContainer/Button" method="_on_game_ui_afficher_score"]
+[connection signal="afficher_score" from="." to="StartScreen" method="_on_game_ui_afficher_score"]
+[connection signal="cacher_score" from="." to="StartScreen/VBoxContainer/ScoreContainer" method="_on_game_ui_cacher_score"]
+[connection signal="cacher_score" from="." to="StartScreen/VBoxContainer/Button" method="_on_game_ui_cacher_score"]
+[connection signal="cacher_score" from="." to="StartScreen" method="_on_game_ui_cacher_score"]
 [connection signal="demande_signal" from="." to="DemandeContainer/DemandeLabel" method="_on_game_ui_demande_signal"]
 [connection signal="desactive" from="." to="ElementView/MarginContainer/VBoxContainer/DoneButton" method="_on_game_ui_desactive"]
 [connection signal="pressed" from="UndoContainer/UndoButton" to="." method="_on_undo_button_pressed"]
 [connection signal="pressed" from="UndoContainer/ResetButton" to="." method="_on_reset_button_pressed"]
 [connection signal="pressed" from="ElementView/MarginContainer/VBoxContainer/DoneButton" to="." method="_on_done_button_pressed"]
+[connection signal="score_affiche" from="StartScreen/VBoxContainer/ScoreContainer" to="StartScreen/VBoxContainer/ScoreContainer/Label" method="_on_score_container_score_affiche"]
+[connection signal="pressed" from="StartScreen/VBoxContainer/Button" to="." method="_on_button_pressed"]
