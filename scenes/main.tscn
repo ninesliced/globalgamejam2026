@@ -46,7 +46,7 @@ position = Vector2(130, 128)
 position = Vector2(1028, 907)
 
 [node name="Timer" type="Timer" parent="." unique_id=237219515]
-wait_time = 11.0
+wait_time = 181.0
 script = ExtResource("6_tefeu")
 
 [connection signal="afficher_score" from="." to="GameUI" method="_on_main_afficher_score"]

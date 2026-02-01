@@ -253,9 +253,10 @@ theme = ExtResource("2_x0n6o")
 theme_override_constants/side_margin = 8
 theme_override_constants/tab_separation = 8
 theme_override_constants/icon_separation = 4
-current_tab = 0
+current_tab = 1
 
 [node name="Masques" type="ScrollContainer" parent="ElementView/MarginContainer/VBoxContainer/TabContainer" unique_id=762613215]
+visible = false
 layout_mode = 2
 size_flags_vertical = 3
 metadata/_tab_index = 0
@@ -296,7 +297,6 @@ layout_mode = 2
 params = SubResource("Resource_plh64")
 
 [node name="Yeux" type="ScrollContainer" parent="ElementView/MarginContainer/VBoxContainer/TabContainer" unique_id=1434561924]
-visible = false
 layout_mode = 2
 size_flags_vertical = 3
 metadata/_tab_index = 1
@@ -413,7 +413,6 @@ justification_flags = 161
 script = ExtResource("9_k7elv")
 
 [node name="StartScreen" type="PanelContainer" parent="." unique_id=2110677133]
-visible = false
 z_index = 1
 layout_mode = 1
 anchors_preset = 15
