@@ -12,6 +12,8 @@ signal modif_score(score : int)
 @onready var mask_checker = $MaskChecker
 @onready var game_ui = $GameUI
 
+var score_total = 0
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	MaskManager.current_mask = $Mask
@@ -48,8 +50,8 @@ func assign_dialog_text(text: String):
 
 
 func _on_mask_signal_evaluer_masque() -> void:
-	var success = mask_checker.check(mask)
-	# ALEX 
+	score_total = score_total + mask_checker.check(mask)
+	modif_score.emit(score_total) 
 
 func _on_mask_signal_nouvelles_demandes() -> void:
 	generate_new_condition()
