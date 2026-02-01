@@ -1,10 +1,8 @@
 [gd_scene format=3 uid="uid://bdcyvgmmxlof1"]
 
 [ext_resource type="Script" uid="uid://daygfhf82fbw2" path="res://scenes/game/mask.gd" id="1_in0c2"]
-[ext_resource type="Texture2D" uid="uid://dd8gk5newspms" path="res://placeholder/tarteaucitronmeringuee.png" id="2_rv8xw"]
 
 [node name="Mask" type="Node2D" unique_id=1566539684]
 script = ExtResource("1_in0c2")
-base_texture = ExtResource("2_rv8xw")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=552707263]

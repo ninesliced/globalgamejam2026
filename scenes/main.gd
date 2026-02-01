@@ -6,6 +6,7 @@ signal reset_masque()
 signal demarrer_timer()
 signal afficher_score(score : int)
 signal cacher_score()
+signal modif_score(score : int)
 
 @onready var mask = $Mask
 @onready var mask_checker = $MaskChecker

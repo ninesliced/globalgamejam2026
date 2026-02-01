@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://bd2r1paj31rac"]
+
+[ext_resource type="Script" uid="uid://b23r6xg1ruubd" path="res://scenes/ui/mask_change_button.gd" id="1_1fuoi"]
+
+[node name="MaskChangeButton" type="Button" unique_id=1178295792]
+custom_minimum_size = Vector2(100, 100)
+offset_right = 8.0
+offset_bottom = 8.0
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("1_1fuoi")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]
