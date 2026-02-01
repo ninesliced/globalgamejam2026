@@ -12,4 +12,4 @@ func _process(delta: float) -> void:
 
 
 func _on_game_ui_modif_temps(temps: int) -> void:
-	text = str("TEMPS : ", temps, " s")
+	text = str(temps, " s")

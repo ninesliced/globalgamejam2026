@@ -24,6 +24,8 @@ func generate_new_conditions():
 		match r:
 			0:
 				_conditions.append(ConditionArchiduchesse.new())
+			1: 
+				_conditions.append(ConditionJeMeSens.new())
 	
 	return _conditions
 
@@ -35,10 +37,11 @@ func get_condition_text():
 	return s
 
 
-func check(_mask: Mask) -> bool:
+func check(_mask: Mask) -> int:
+	var resultat = 0
 	for cond in conditions:
 		var c = cond.check(_mask, conditions)
 		if not c:
-			return false
+			resultat = resultat + 25
 	
 	return true
