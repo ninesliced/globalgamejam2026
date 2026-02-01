@@ -31,10 +31,12 @@ func remove_last_element():
 	
 func hide_mask():
 	var tween = get_tree().create_tween()
+	tween.set_trans(Tween.TRANS_BACK)
 	tween.tween_property(self, "position", Vector2(600, 2000), 1.0)
 
 func show_mask():
 	var tween = get_tree().create_tween()
+	tween.set_trans(Tween.TRANS_BACK)
 	tween.tween_property(self, "position", Vector2(600, 540), 1.0)
 
 func reset_mask():
